@@ -1,0 +1,7 @@
+[
+  {"type":"step_ack","turnId":"t_lesson_1","generation":4,"stepIndex":2,"drawnOpIds":["t_lesson_1:2:0","t_lesson_1:2:1"]},
+  {"type":"step_progress","turnId":"t_lesson_1","generation":4,"stepIndex":2,"event":"completed","completedBy":"words","drawnOpIds":["t_lesson_1:2:0"],"startedUpTo":2,"heardUpTo":2,"firstWordMs":81234.5,"lastWordMs":84410.0,"earlyOps":0,"lookaheadJumps":1},
+  {"type":"board_report","pageId":"p_1a2b3c4d","rows":[{"rowId":"w1","text":"Given: DE || BC"}],"rowsRemaining":12},
+  {"type":"page_turned","rootPageId":"p_1a2b3c4d","fromSubId":"p_1a2b3c4d","toSubId":"p_1a2b3c4d_p2","cause":"overflow","atOpId":"t9:11:0"},
+  {"type":"resync_request","epoch":"9f2c1a0b","lastSeq":57,"reason":"reconnected","wantSnapshot":false}
+]

@@ -1,0 +1,873 @@
+[
+ {
+  "generation": 1,
+  "seq": 1,
+  "type": "diagram_commit",
+  "turnId": "t_triangle_and_circle",
+  "pageId": "p1",
+  "diagram": {
+   "id": "verified_scene",
+   "name": "segment_figure",
+   "commands": [
+    {
+     "type": "DRAW_POINT",
+     "params": [
+      780.0,
+      577.93,
+      3.5
+     ],
+     "anchorId": "pt_B",
+     "semanticRef": {
+      "entityId": "pt_B"
+     }
+    },
+    {
+     "type": "DRAW_POINT",
+     "params": [
+      879.14,
+      577.93,
+      3.5
+     ],
+     "anchorId": "pt_A",
+     "semanticRef": {
+      "entityId": "pt_A"
+     }
+    },
+    {
+     "type": "DRAW_POINT",
+     "params": [
+      780.0,
+      340.0,
+      3.5
+     ],
+     "anchorId": "pt_C",
+     "semanticRef": {
+      "entityId": "pt_C"
+     }
+    },
+    {
+     "type": "DRAW_POLYLINE",
+     "params": [
+      780.0,
+      577.93,
+      879.14,
+      577.93,
+      780.0,
+      340.0,
+      780.0,
+      577.93
+     ],
+     "anchorId": "tri_BAC",
+     "semanticRef": {
+      "entityId": "tri_BAC"
+     }
+    },
+    {
+     "type": "DRAW_RIGHT_ANGLE_MARK",
+     "params": [
+      780.0,
+      577.93,
+      14.0,
+      0.0,
+      270.0
+     ],
+     "anchorId": "ang_ABC",
+     "semanticRef": {
+      "entityId": "ang_ABC"
+     }
+    },
+    {
+     "type": "DRAW_ANGLE_MARK",
+     "params": [
+      879.14,
+      577.93,
+      22.0,
+      180.0,
+      247.38
+     ],
+     "anchorId": "ang_BAC",
+     "semanticRef": {
+      "entityId": "ang_BAC"
+     }
+    },
+    {
+     "type": "DRAW_LINE",
+     "params": [
+      879.14,
+      577.93,
+      780.0,
+      577.93
+     ],
+     "anchorId": "seg_AB",
+     "semanticRef": {
+      "entityId": "seg_AB"
+     }
+    },
+    {
+     "type": "DRAW_LINE",
+     "params": [
+      879.14,
+      577.93,
+      780.0,
+      340.0
+     ],
+     "anchorId": "seg_AC",
+     "semanticRef": {
+      "entityId": "seg_AC"
+     }
+    },
+    {
+     "type": "DRAW_TICK",
+     "params": [
+      829.57,
+      577.93,
+      180.0,
+      2.0
+     ],
+     "anchorId": "tickmark_tk",
+     "semanticRef": {
+      "entityId": "tickmark_tk"
+     }
+    },
+    {
+     "type": "DRAW_DIMENSION",
+     "params": [
+      780.0,
+      577.93,
+      780.0,
+      340.0,
+      18.0
+     ],
+     "text": "12 cm",
+     "anchorId": "dimension_dim",
+     "semanticRef": {
+      "entityId": "dimension_dim"
+     }
+    },
+    {
+     "type": "DRAW_CIRCLE",
+     "params": [
+      780.0,
+      340.0,
+      59.48
+     ],
+     "anchorId": "cir_C",
+     "semanticRef": {
+      "entityId": "cir_C"
+     }
+    },
+    {
+     "type": "DRAW_ARC",
+     "params": [
+      780.0,
+      340.0,
+      237.93,
+      67.38,
+      90.0
+     ],
+     "anchorId": "arc_arcC",
+     "semanticRef": {
+      "entityId": "arc_arcC"
+     }
+    },
+    {
+     "type": "DRAW_RAY",
+     "params": [
+      780.0,
+      340.0,
+      780.0,
+      640.0
+     ],
+     "anchorId": "ray_CB",
+     "semanticRef": {
+      "entityId": "ray_CB"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      768.85,
+      583.7,
+      18.0
+     ],
+     "text": "B",
+     "anchorId": "pt_B",
+     "semanticRef": {
+      "entityId": "pt_B"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      884.38,
+      581.22,
+      18.0
+     ],
+     "text": "A",
+     "anchorId": "pt_A",
+     "semanticRef": {
+      "entityId": "pt_A"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      771.74,
+      315.34,
+      18.0
+     ],
+     "text": "C",
+     "anchorId": "pt_C",
+     "semanticRef": {
+      "entityId": "pt_C"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      824.57,
+      554.93,
+      18.0
+     ],
+     "text": "AB",
+     "anchorId": "seg_AB",
+     "semanticRef": {
+      "entityId": "seg_AB"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      835.57,
+      572.43,
+      16.0
+     ],
+     "text": "AB = 5 cm",
+     "anchorId": "seg_AB",
+     "semanticRef": {
+      "entityId": "seg_AB"
+     }
+    }
+   ],
+   "anchors": [
+    {
+     "id": "pt_B",
+     "labels": [
+      "B"
+     ],
+     "x": 768.85,
+     "y": 573.93,
+     "width": 15.15,
+     "height": 27.77
+    },
+    {
+     "id": "pt_A",
+     "labels": [
+      "A"
+     ],
+     "x": 875.14,
+     "y": 573.93,
+     "width": 19.24,
+     "height": 25.29
+    },
+    {
+     "id": "pt_C",
+     "labels": [
+      "C"
+     ],
+     "x": 771.74,
+     "y": 315.34,
+     "width": 12.26,
+     "height": 28.66
+    },
+    {
+     "id": "tri_BAC",
+     "labels": [],
+     "x": 780.0,
+     "y": 340.0,
+     "width": 99.14,
+     "height": 237.93
+    },
+    {
+     "id": "ang_ABC",
+     "labels": [],
+     "x": 758.0,
+     "y": 555.93,
+     "width": 44.0,
+     "height": 44.0
+    },
+    {
+     "id": "ang_BAC",
+     "labels": [],
+     "x": 857.14,
+     "y": 555.93,
+     "width": 44.0,
+     "height": 44.0
+    },
+    {
+     "id": "seg_AB",
+     "labels": [
+      "AB"
+     ],
+     "x": 780.0,
+     "y": 554.93,
+     "width": 99.14,
+     "height": 23.0
+    },
+    {
+     "id": "seg_AC",
+     "labels": [],
+     "x": 780.0,
+     "y": 340.0,
+     "width": 99.14,
+     "height": 237.93
+    },
+    {
+     "id": "tickmark_tk",
+     "labels": [],
+     "x": 821.57,
+     "y": 569.93,
+     "width": 16.0,
+     "height": 16.0
+    },
+    {
+     "id": "dimension_dim",
+     "labels": [],
+     "x": 780.0,
+     "y": 340.0,
+     "width": 10.0,
+     "height": 237.93
+    },
+    {
+     "id": "cir_C",
+     "labels": [],
+     "x": 720.52,
+     "y": 280.52,
+     "width": 118.96,
+     "height": 118.96
+    },
+    {
+     "id": "arc_arcC",
+     "labels": [],
+     "x": 542.07,
+     "y": 102.07,
+     "width": 475.86,
+     "height": 475.86
+    },
+    {
+     "id": "ray_CB",
+     "labels": [],
+     "x": 780.0,
+     "y": 340.0,
+     "width": 10.0,
+     "height": 300.0
+    }
+   ],
+   "reveals": [
+    {
+     "narration": "Reveal group rg_marks",
+     "commandIndices": [
+      4,
+      5,
+      8
+     ],
+     "kind": "reveal",
+     "targetId": "rg_marks"
+    }
+   ],
+   "promptAddon": "figure: segment_figure\nparts you may [FOCUS] (use each id exactly):\n- pt_B: point B\n- pt_A: point A\n- pt_C: point C\n- tri_BAC: triangle BAC\n- ang_ABC: right angle ABC\n- ang_BAC: angle BAC\n- seg_AB: side AB (AB = 5 cm)\n- seg_AC: side AC\n- tickmark_tk: tickmark_tk\n- dimension_dim: dimension_dim\n- cir_C: circle with centre C\n- arc_arcC: arc_arcC\n- ray_CB: line\nreveal groups you may [FOCUS]: rg_marks\nwithheld labels, reveal with [ANNOTATE:id] when you reach them:\n- seg_AC: length of AC",
+   "deferredAnnotations": [
+    {
+     "entityId": "seg_AC",
+     "commands": [
+      {
+       "type": "LABEL",
+       "params": [
+        835.57,
+        464.97,
+        16.0
+       ],
+       "text": "AC = 13 cm",
+       "anchorId": "seg_AC",
+       "semanticRef": {
+        "entityId": "seg_AC"
+       }
+      }
+     ]
+    }
+   ],
+   "labelGlossary": {
+    "seg_AB": {
+     "symbol": "AB",
+     "title": "segment AB",
+     "value": "5 cm",
+     "provenance": "given"
+    }
+   },
+   "aliasMap": {
+    "B": "pt_B",
+    "pt_B": "pt_B",
+    "point_B": "pt_B",
+    "A": "pt_A",
+    "pt_A": "pt_A",
+    "point_A": "pt_A",
+    "C": "pt_C",
+    "pt_C": "pt_C",
+    "point_C": "pt_C",
+    "tri": "tri_BAC",
+    "BAC": "tri_BAC",
+    "tri_ABC": "tri_BAC",
+    "triangle_ABC": "tri_BAC",
+    "tri_ACB": "tri_BAC",
+    "triangle_ACB": "tri_BAC",
+    "tri_BAC": "tri_BAC",
+    "triangle_BAC": "tri_BAC",
+    "tri_BCA": "tri_BAC",
+    "triangle_BCA": "tri_BAC",
+    "tri_CAB": "tri_BAC",
+    "triangle_CAB": "tri_BAC",
+    "tri_CBA": "tri_BAC",
+    "triangle_CBA": "tri_BAC",
+    "mk": "ang_ABC",
+    "ABC": "ang_ABC",
+    "ang_ABC": "ang_ABC",
+    "ang_CBA": "ang_ABC",
+    "angle_ABC": "ang_ABC",
+    "angA": "ang_BAC",
+    "ang_BAC": "ang_BAC",
+    "ang_CAB": "ang_BAC",
+    "angle_BAC": "ang_BAC",
+    "sAB": "seg_AB",
+    "AB": "seg_AB",
+    "BA": "seg_AB",
+    "seg_AB": "seg_AB",
+    "seg_BA": "seg_AB",
+    "segment_AB": "seg_AB",
+    "segment_BA": "seg_AB",
+    "side_AB": "seg_AB",
+    "side_BA": "seg_AB",
+    "sAC": "seg_AC",
+    "AC": "seg_AC",
+    "CA": "seg_AC",
+    "seg_AC": "seg_AC",
+    "seg_CA": "seg_AC",
+    "segment_AC": "seg_AC",
+    "segment_CA": "seg_AC",
+    "side_AC": "seg_AC",
+    "side_CA": "seg_AC",
+    "tk": "tickmark_tk",
+    "dim": "dimension_dim",
+    "circ": "cir_C",
+    "arcC": "arc_arcC",
+    "rayCB": "ray_CB",
+    "CB": "ray_CB"
+   },
+   "namespace": ""
+  },
+  "reference": false
+ },
+ {
+  "generation": 1,
+  "seq": 2,
+  "type": "diagram_commit",
+  "turnId": "t_graph",
+  "pageId": "p1",
+  "diagram": {
+   "id": "verified_scene",
+   "name": "diagram_figure",
+   "commands": [
+    {
+     "type": "DRAW_AXES",
+     "params": [
+      631.29,
+      577.93,
+      928.71,
+      102.07,
+      690.78,
+      518.45,
+      59.48
+     ],
+     "anchorId": "axes_ax",
+     "semanticRef": {
+      "entityId": "axes_ax"
+     }
+    },
+    {
+     "type": "DRAW_CURVE",
+     "params": [
+      690.78,
+      161.55,
+      692.26,
+      164.53,
+      693.75,
+      167.5,
+      695.24,
+      170.47,
+      696.72,
+      173.45,
+      698.21,
+      176.42,
+      699.7,
+      179.4,
+      701.19,
+      182.37,
+      702.67,
+      185.34,
+      704.16,
+      188.32,
+      705.65,
+      191.29,
+      707.13,
+      194.27,
+      708.62,
+      197.24,
+      710.11,
+      200.22,
+      711.59,
+      203.19,
+      713.08,
+      206.16,
+      714.57,
+      209.14,
+      716.06,
+      212.11,
+      717.54,
+      215.09,
+      719.03,
+      218.06,
+      720.52,
+      221.03,
+      722.0,
+      224.01,
+      723.49,
+      226.98,
+      724.98,
+      229.96,
+      726.47,
+      232.93,
+      727.95,
+      235.91,
+      729.44,
+      238.88,
+      730.93,
+      241.85,
+      732.41,
+      244.83,
+      733.9,
+      247.8,
+      735.39,
+      250.78,
+      736.88,
+      253.75,
+      738.36,
+      256.72,
+      739.85,
+      259.7,
+      741.34,
+      262.67,
+      742.82,
+      265.65,
+      744.31,
+      268.62,
+      745.8,
+      271.59,
+      747.28,
+      274.57,
+      748.77,
+      277.54,
+      750.26,
+      280.52,
+      751.75,
+      283.49,
+      753.23,
+      286.47,
+      754.72,
+      289.44,
+      756.21,
+      292.41,
+      757.69,
+      295.39,
+      759.18,
+      298.36,
+      760.67,
+      301.34,
+      762.16,
+      304.31,
+      763.64,
+      307.28,
+      765.13,
+      310.26,
+      766.62,
+      313.23,
+      768.1,
+      316.21,
+      769.59,
+      319.18,
+      771.08,
+      322.16,
+      772.56,
+      325.13,
+      774.05,
+      328.1,
+      775.54,
+      331.08,
+      777.03,
+      334.05,
+      778.51,
+      337.03,
+      780.0,
+      340.0,
+      781.49,
+      342.97,
+      782.97,
+      345.95,
+      784.46,
+      348.92,
+      785.95,
+      351.9,
+      787.44,
+      354.87,
+      788.92,
+      357.84,
+      790.41,
+      360.82,
+      791.9,
+      363.79,
+      793.38,
+      366.77,
+      794.87,
+      369.74,
+      796.36,
+      372.72,
+      797.84,
+      375.69,
+      799.33,
+      378.66,
+      800.82,
+      381.64,
+      802.31,
+      384.61,
+      803.79,
+      387.59,
+      805.28,
+      390.56,
+      806.77,
+      393.53,
+      808.25,
+      396.51,
+      809.74,
+      399.48,
+      811.23,
+      402.46,
+      812.72,
+      405.43,
+      814.2,
+      408.41,
+      815.69,
+      411.38,
+      817.18,
+      414.35,
+      818.66,
+      417.33,
+      820.15,
+      420.3,
+      821.64,
+      423.28,
+      823.12,
+      426.25,
+      824.61,
+      429.22,
+      826.1,
+      432.2,
+      827.59,
+      435.17,
+      829.07,
+      438.15,
+      830.56,
+      441.12,
+      832.05,
+      444.09,
+      833.53,
+      447.07,
+      835.02,
+      450.04,
+      836.51,
+      453.02,
+      838.0,
+      455.99,
+      839.48,
+      458.97,
+      840.97,
+      461.94,
+      842.46,
+      464.91,
+      843.94,
+      467.89,
+      845.43,
+      470.86,
+      846.92,
+      473.84,
+      848.41,
+      476.81,
+      849.89,
+      479.78,
+      851.38,
+      482.76,
+      852.87,
+      485.73,
+      854.35,
+      488.71,
+      855.84,
+      491.68,
+      857.33,
+      494.66,
+      858.81,
+      497.63,
+      860.3,
+      500.6,
+      861.79,
+      503.58,
+      863.28,
+      506.55,
+      864.76,
+      509.53,
+      866.25,
+      512.5,
+      867.74,
+      515.47,
+      869.22,
+      518.45
+     ],
+     "anchorId": "curve_g",
+     "semanticRef": {
+      "entityId": "curve_g"
+     }
+    }
+   ],
+   "anchors": [
+    {
+     "id": "axes_ax",
+     "labels": [],
+     "x": 631.29,
+     "y": 102.07,
+     "width": 297.42,
+     "height": 475.86
+    },
+    {
+     "id": "curve_g",
+     "labels": [],
+     "x": 690.78,
+     "y": 161.55,
+     "width": 178.44,
+     "height": 356.9
+    }
+   ],
+   "reveals": [],
+   "promptAddon": "figure: diagram_figure\nparts you may [FOCUS] (use each id exactly):\n- axes_ax: axes_ax\n- curve_g: curve_g",
+   "aliasMap": {
+    "ax": "axes_ax",
+    "g": "curve_g"
+   },
+   "namespace": ""
+  },
+  "reference": false
+ },
+ {
+  "generation": 1,
+  "seq": 3,
+  "type": "diagram_commit",
+  "turnId": "t_number_line",
+  "pageId": "p1",
+  "diagram": {
+   "id": "verified_scene",
+   "name": "diagram_figure",
+   "commands": [
+    {
+     "type": "DRAW_NUMBER_LINE",
+     "params": [
+      490.34,
+      340.0,
+      1069.66,
+      96.55,
+      -3.0,
+      1.0
+     ],
+     "anchorId": "numberline_nl",
+     "semanticRef": {
+      "entityId": "numberline_nl"
+     }
+    },
+    {
+     "type": "DRAW_POINT",
+     "params": [
+      586.9,
+      340.0,
+      4.5
+     ],
+     "anchorId": "numberline_nl",
+     "semanticRef": {
+      "entityId": "numberline_nl"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      578.9,
+      308.0,
+      18.0
+     ],
+     "text": "-2",
+     "anchorId": "numberline_nl",
+     "semanticRef": {
+      "entityId": "numberline_nl"
+     }
+    },
+    {
+     "type": "DRAW_POINT",
+     "params": [
+      924.83,
+      340.0,
+      4.5
+     ],
+     "anchorId": "numberline_nl",
+     "semanticRef": {
+      "entityId": "numberline_nl"
+     }
+    },
+    {
+     "type": "LABEL",
+     "params": [
+      916.83,
+      308.0,
+      18.0
+     ],
+     "text": "1.5",
+     "anchorId": "numberline_nl",
+     "semanticRef": {
+      "entityId": "numberline_nl"
+     }
+    }
+   ],
+   "anchors": [
+    {
+     "id": "numberline_nl",
+     "labels": [
+      "-2",
+      "1.5"
+     ],
+     "x": 490.34,
+     "y": 320.0,
+     "width": 579.32,
+     "height": 40.0
+    }
+   ],
+   "reveals": [],
+   "promptAddon": "figure: diagram_figure\nparts you may [FOCUS] (use each id exactly):\n- numberline_nl: -2, 1.5",
+   "aliasMap": {
+    "nl": "numberline_nl"
+   },
+   "namespace": ""
+  },
+  "reference": false
+ }
+]

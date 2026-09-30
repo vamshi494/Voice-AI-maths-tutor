@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "AI Math Tutor System Architecture",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 660]
+  },
+  "components": [
+    {
+      "id": "browser",
+      "type": "frontend",
+      "label": "Browser Client",
+      "sublabel": "React 18 + Konva Whiteboard",
+      "pos": [40, 220],
+      "size": [170, 72]
+    },
+    {
+      "id": "livekit",
+      "type": "backend",
+      "label": "LiveKit Server",
+      "sublabel": "WebRTC SFU + Data Channel",
+      "pos": [330, 220],
+      "size": [170, 72]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "LiveKit Agent Worker",
+      "sublabel": "FastAPI + LangGraph + Manager",
+      "pos": [660, 220],
+      "size": [180, 72]
+    },
+    {
+      "id": "stt",
+      "type": "external",
+      "label": "Deepgram STT",
+      "sublabel": "nova-2 Streaming STT",
+      "pos": [980, 80],
+      "size": [180, 68]
+    },
+    {
+      "id": "tts",
+      "type": "external",
+      "label": "TTS Fallback Pair",
+      "sublabel": "ElevenLabs / Deepgram",
+      "pos": [980, 220],
+      "size": [180, 72]
+    },
+    {
+      "id": "llm",
+      "type": "external",
+      "label": "LLM Gateway",
+      "sublabel": "Groq / OpenRouter / Zen",
+      "pos": [980, 360],
+      "size": [180, 72]
+    },
+    {
+      "id": "postgres",
+      "type": "database",
+      "label": "PostgreSQL Primary",
+      "sublabel": "Docker Host :5434 / pgvector",
+      "pos": [490, 480],
+      "size": [180, 72]
+    },
+    {
+      "id": "sqlite",
+      "type": "database",
+      "label": "SQLite Fallback",
+      "sublabel": "WAL math_tutor.db / busy 5000",
+      "pos": [820, 480],
+      "size": [180, 72]
+    }
+  ],
+  "connections": [
+    {
+      "id": "browser_to_livekit",
+      "from": "browser",
+      "to": "livekit",
+      "label": "WebRTC audio & RPC",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "livekit_to_worker",
+      "from": "livekit",
+      "to": "worker",
+      "label": "Audio & tutor.report",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "worker_packet_events",
+      "from": "worker",
+      "to": "livekit",
+      "label": "publish_data (<= 14 KiB)",
+      "fromSide": "top",
+      "toSide": "top"
+    },
+    {
+      "id": "worker_stream_events",
+      "from": "worker",
+      "to": "livekit",
+      "label": "send_text (> 14 KiB stream)",
+      "fromSide": "bottom",
+      "toSide": "bottom"
+    },
+    {
+      "id": "worker_to_stt",
+      "from": "worker",
+      "to": "stt",
+      "label": "Audio stream",
+      "fromSide": "top",
+      "toSide": "left"
+    },
+    {
+      "id": "worker_to_tts",
+      "from": "worker",
+      "to": "tts",
+      "label": "Speech synthesis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "worker_to_llm",
+      "from": "worker",
+      "to": "llm",
+      "label": "Dual-lane prompt",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "worker_to_postgres",
+      "from": "worker",
+      "to": "postgres",
+      "label": "SQLAlchemy async",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "postgres_to_sqlite",
+      "from": "postgres",
+      "to": "sqlite",
+      "label": "WAL fallback",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Frontend Whiteboard",
+      "items": [
+        "React 18 whiteboard powered by Konva multi-layer chalkboard rendering",
+        "TranscriptSyncMatcher synchronizes spoken words with visual step animations",
+        "Client sends step_progress and step_ack reports over tutor.report topic"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Realtime Pipeline",
+      "items": [
+        "LiveKit SFU brokers real-time audio and RPC dispatch with low latency",
+        "Dual transport splits events at 14 KiB between publish_data packets and send_text streams",
+        "StateMachineManager serializes state transitions under an asyncio lock"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Resilient Providers",
+      "items": [
+        "Deepgram nova-2 streaming STT with VAD barge-in guard (minimum 3 words)",
+        "ElevenLabs primary TTS backed by Deepgram fallback adapter",
+        "LLM gateway fails over Groq -> OpenRouter -> OpenCode Zen; DB fails over Postgres -> SQLite WAL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,507 @@
+[
+ {
+  "generation": 6,
+  "seq": 90,
+  "epoch": "9f2c1a0b",
+  "type": "page_commit",
+  "turnId": "t_p2",
+  "pageId": "L_1a2b_p1",
+  "commitId": "c_p1_1",
+  "workRect": {
+   "x": 40.0,
+   "y": 72.0,
+   "width": 340.0,
+   "height": 608.0
+  },
+  "blocks": [
+   {
+    "id": "fig_tri",
+    "role": "figure",
+    "rect": {
+     "x": 444.0,
+     "y": 64.0,
+     "width": 672.0,
+     "height": 552.0
+    },
+    "sticky": false,
+    "commands": [
+     {
+      "type": "DRAW_POINT",
+      "params": [
+       780.0,
+       557.24,
+       3.5
+      ],
+      "anchorId": "pt_B",
+      "semanticRef": {
+       "entityId": "pt_B"
+      }
+     },
+     {
+      "type": "DRAW_POINT",
+      "params": [
+       870.52,
+       557.24,
+       3.5
+      ],
+      "anchorId": "pt_A",
+      "semanticRef": {
+       "entityId": "pt_A"
+      }
+     },
+     {
+      "type": "DRAW_POINT",
+      "params": [
+       780.0,
+       340.0,
+       3.5
+      ],
+      "anchorId": "pt_C",
+      "semanticRef": {
+       "entityId": "pt_C"
+      }
+     },
+     {
+      "type": "DRAW_POLYLINE",
+      "params": [
+       780.0,
+       557.24,
+       870.52,
+       557.24,
+       780.0,
+       340.0,
+       780.0,
+       557.24
+      ],
+      "anchorId": "tri_BAC",
+      "semanticRef": {
+       "entityId": "tri_BAC"
+      }
+     },
+     {
+      "type": "DRAW_RIGHT_ANGLE_MARK",
+      "params": [
+       780.0,
+       557.24,
+       14.0,
+       0.0,
+       270.0
+      ],
+      "anchorId": "ang_ABC",
+      "semanticRef": {
+       "entityId": "ang_ABC"
+      }
+     },
+     {
+      "type": "DRAW_ANGLE_MARK",
+      "params": [
+       870.52,
+       557.24,
+       22.0,
+       180.0,
+       247.38
+      ],
+      "anchorId": "ang_BAC",
+      "semanticRef": {
+       "entityId": "ang_BAC"
+      }
+     },
+     {
+      "type": "DRAW_LINE",
+      "params": [
+       870.52,
+       557.24,
+       780.0,
+       557.24
+      ],
+      "anchorId": "seg_AB",
+      "semanticRef": {
+       "entityId": "seg_AB"
+      }
+     },
+     {
+      "type": "DRAW_LINE",
+      "params": [
+       870.52,
+       557.24,
+       780.0,
+       340.0
+      ],
+      "anchorId": "seg_AC",
+      "semanticRef": {
+       "entityId": "seg_AC"
+      }
+     },
+     {
+      "type": "DRAW_TICK",
+      "params": [
+       825.26,
+       557.24,
+       180.0,
+       2.0
+      ],
+      "anchorId": "tickmark_tk",
+      "semanticRef": {
+       "entityId": "tickmark_tk"
+      }
+     },
+     {
+      "type": "DRAW_DIMENSION",
+      "params": [
+       780.0,
+       557.24,
+       780.0,
+       340.0,
+       18.0
+      ],
+      "text": "12 cm",
+      "anchorId": "dimension_dim",
+      "semanticRef": {
+       "entityId": "dimension_dim"
+      }
+     },
+     {
+      "type": "DRAW_CIRCLE",
+      "params": [
+       780.0,
+       340.0,
+       54.31
+      ],
+      "anchorId": "cir_C",
+      "semanticRef": {
+       "entityId": "cir_C"
+      }
+     },
+     {
+      "type": "DRAW_ARC",
+      "params": [
+       780.0,
+       340.0,
+       217.24,
+       67.38,
+       90.0
+      ],
+      "anchorId": "arc_arcC",
+      "semanticRef": {
+       "entityId": "arc_arcC"
+      }
+     },
+     {
+      "type": "DRAW_RAY",
+      "params": [
+       780.0,
+       340.0,
+       780.0,
+       616.0
+      ],
+      "anchorId": "ray_CB",
+      "semanticRef": {
+       "entityId": "ray_CB"
+      }
+     },
+     {
+      "type": "LABEL",
+      "params": [
+       768.85,
+       563.01,
+       18.0
+      ],
+      "text": "B",
+      "anchorId": "pt_B",
+      "semanticRef": {
+       "entityId": "pt_B"
+      }
+     },
+     {
+      "type": "LABEL",
+      "params": [
+       875.76,
+       560.53,
+       18.0
+      ],
+      "text": "A",
+      "anchorId": "pt_A",
+      "semanticRef": {
+       "entityId": "pt_A"
+      }
+     },
+     {
+      "type": "LABEL",
+      "params": [
+       771.74,
+       315.34,
+       18.0
+      ],
+      "text": "C",
+      "anchorId": "pt_C",
+      "semanticRef": {
+       "entityId": "pt_C"
+      }
+     },
+     {
+      "type": "LABEL",
+      "params": [
+       820.26,
+       534.24,
+       18.0
+      ],
+      "text": "AB",
+      "anchorId": "seg_AB",
+      "semanticRef": {
+       "entityId": "seg_AB"
+      }
+     },
+     {
+      "type": "LABEL",
+      "params": [
+       831.26,
+       551.74,
+       16.0
+      ],
+      "text": "AB = 5 cm",
+      "anchorId": "seg_AB",
+      "semanticRef": {
+       "entityId": "seg_AB"
+      }
+     }
+    ],
+    "anchors": [
+     {
+      "id": "pt_B",
+      "labels": [
+       "B"
+      ],
+      "x": 768.85,
+      "y": 553.24,
+      "width": 15.15,
+      "height": 27.77
+     },
+     {
+      "id": "pt_A",
+      "labels": [
+       "A"
+      ],
+      "x": 866.52,
+      "y": 553.24,
+      "width": 19.24,
+      "height": 25.29
+     },
+     {
+      "id": "pt_C",
+      "labels": [
+       "C"
+      ],
+      "x": 771.74,
+      "y": 315.34,
+      "width": 12.26,
+      "height": 28.66
+     },
+     {
+      "id": "tri_BAC",
+      "labels": [],
+      "x": 780.0,
+      "y": 340.0,
+      "width": 90.52,
+      "height": 217.24
+     },
+     {
+      "id": "ang_ABC",
+      "labels": [],
+      "x": 758.0,
+      "y": 535.24,
+      "width": 44.0,
+      "height": 44.0
+     },
+     {
+      "id": "ang_BAC",
+      "labels": [],
+      "x": 848.52,
+      "y": 535.24,
+      "width": 44.0,
+      "height": 44.0
+     },
+     {
+      "id": "seg_AB",
+      "labels": [
+       "AB"
+      ],
+      "x": 780.0,
+      "y": 534.24,
+      "width": 90.52,
+      "height": 23.0
+     },
+     {
+      "id": "seg_AC",
+      "labels": [],
+      "x": 780.0,
+      "y": 340.0,
+      "width": 90.52,
+      "height": 217.24
+     },
+     {
+      "id": "tickmark_tk",
+      "labels": [],
+      "x": 817.26,
+      "y": 549.24,
+      "width": 16.0,
+      "height": 16.0
+     },
+     {
+      "id": "dimension_dim",
+      "labels": [],
+      "x": 780.0,
+      "y": 340.0,
+      "width": 10.0,
+      "height": 217.24
+     },
+     {
+      "id": "cir_C",
+      "labels": [],
+      "x": 725.69,
+      "y": 285.69,
+      "width": 108.62,
+      "height": 108.62
+     },
+     {
+      "id": "arc_arcC",
+      "labels": [],
+      "x": 562.76,
+      "y": 122.76,
+      "width": 434.48,
+      "height": 434.48
+     },
+     {
+      "id": "ray_CB",
+      "labels": [],
+      "x": 780.0,
+      "y": 340.0,
+      "width": 10.0,
+      "height": 276.0
+     }
+    ],
+    "reveals": [
+     {
+      "narration": "Reveal group rg_marks",
+      "commandIndices": [
+       4,
+       5,
+       8
+      ],
+      "kind": "reveal",
+      "targetId": "rg_marks"
+     }
+    ],
+    "deferredAnnotations": [
+     {
+      "entityId": "seg_AC",
+      "commands": [
+       {
+        "type": "LABEL",
+        "params": [
+         831.26,
+         454.62,
+         16.0
+        ],
+        "text": "AC = 13 cm",
+        "anchorId": "seg_AC",
+        "semanticRef": {
+         "entityId": "seg_AC"
+        }
+       }
+      ]
+     }
+    ],
+    "labelGlossary": {
+     "seg_AB": {
+      "symbol": "AB",
+      "title": "segment AB",
+      "value": "5 cm",
+      "provenance": "given"
+     }
+    },
+    "aliasMap": {
+     "B": "pt_B",
+     "pt_B": "pt_B",
+     "point_B": "pt_B",
+     "A": "pt_A",
+     "pt_A": "pt_A",
+     "point_A": "pt_A",
+     "C": "pt_C",
+     "pt_C": "pt_C",
+     "point_C": "pt_C",
+     "tri": "tri_BAC",
+     "BAC": "tri_BAC",
+     "tri_ABC": "tri_BAC",
+     "triangle_ABC": "tri_BAC",
+     "tri_ACB": "tri_BAC",
+     "triangle_ACB": "tri_BAC",
+     "tri_BAC": "tri_BAC",
+     "triangle_BAC": "tri_BAC",
+     "tri_BCA": "tri_BAC",
+     "triangle_BCA": "tri_BAC",
+     "tri_CAB": "tri_BAC",
+     "triangle_CAB": "tri_BAC",
+     "tri_CBA": "tri_BAC",
+     "triangle_CBA": "tri_BAC",
+     "mk": "ang_ABC",
+     "ABC": "ang_ABC",
+     "ang_ABC": "ang_ABC",
+     "ang_CBA": "ang_ABC",
+     "angle_ABC": "ang_ABC",
+     "angA": "ang_BAC",
+     "ang_BAC": "ang_BAC",
+     "ang_CAB": "ang_BAC",
+     "angle_BAC": "ang_BAC",
+     "sAB": "seg_AB",
+     "AB": "seg_AB",
+     "BA": "seg_AB",
+     "seg_AB": "seg_AB",
+     "seg_BA": "seg_AB",
+     "segment_AB": "seg_AB",
+     "segment_BA": "seg_AB",
+     "side_AB": "seg_AB",
+     "side_BA": "seg_AB",
+     "sAC": "seg_AC",
+     "AC": "seg_AC",
+     "CA": "seg_AC",
+     "seg_AC": "seg_AC",
+     "seg_CA": "seg_AC",
+     "segment_AC": "seg_AC",
+     "segment_CA": "seg_AC",
+     "side_AC": "seg_AC",
+     "side_CA": "seg_AC",
+     "tk": "tickmark_tk",
+     "dim": "dimension_dim",
+     "circ": "cir_C",
+     "arcC": "arc_arcC",
+     "rayCB": "ray_CB",
+     "CB": "ray_CB"
+    },
+    "namespace": "",
+    "revealedIds": []
+   }
+  ],
+  "carriedIds": [],
+  "reference": false
+ },
+ {
+  "generation": 5,
+  "seq": 70,
+  "epoch": "9f2c1a0b",
+  "type": "lesson_plan",
+  "lessonId": "L_1a2b",
+  "title": "Basic Proportionality Theorem",
+  "pages": [
+   {
+    "pageId": "L_1a2b_p0",
+    "index": 0,
+    "title": "What BPT says"
+   },
+   {
+    "pageId": "L_1a2b_p1",
+    "index": 1,
+    "title": "Proof"
+   }
+  ]
+ }
+]

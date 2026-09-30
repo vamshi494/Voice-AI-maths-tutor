@@ -1,0 +1,35 @@
+{
+  "name": "ai-math-tutor-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@livekit/components-react": "^2.6.5",
+    "gsap": "^3.12.5",
+    "jspdf": "^2.5.2",
+    "konva": "^9.3.16",
+    "livekit-client": "^2.5.8",
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-konva": "^18.2.10",
+    "roughjs": "^4.6.6",
+    "tegaki": "^0.22.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "happy-dom": "^20.14.5",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.4",
+    "vitest": "^1.6.0"
+  }
+}

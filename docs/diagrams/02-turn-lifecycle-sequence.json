@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Turn Lifecycle & Dual-Lane Execution Sequence",
+    "quality_profile": "showcase",
+    "column_fit": "spread",
+    "viewBox": [1160, 840]
+  },
+  "participants": [
+    {
+      "id": "student",
+      "type": "external",
+      "label": "Student"
+    },
+    {
+      "id": "livekit",
+      "type": "backend",
+      "label": "LiveKit"
+    },
+    {
+      "id": "manager",
+      "type": "backend",
+      "label": "Manager"
+    },
+    {
+      "id": "turn_plan",
+      "type": "backend",
+      "label": "Planner"
+    },
+    {
+      "id": "solve_lane",
+      "type": "backend",
+      "label": "Solver"
+    },
+    {
+      "id": "scene_lane",
+      "type": "backend",
+      "label": "Scene"
+    },
+    {
+      "id": "authority",
+      "type": "backend",
+      "label": "Authority"
+    },
+    {
+      "id": "teaching",
+      "type": "backend",
+      "label": "Teaching"
+    },
+    {
+      "id": "sync",
+      "type": "frontend",
+      "label": "Matcher"
+    },
+    {
+      "id": "executor",
+      "type": "frontend",
+      "label": "Executor"
+    }
+  ],
+  "segments": [
+    { "from": 140, "to": 260, "label": "Speech & Ingestion" },
+    { "from": 275, "to": 465, "label": "Dual-Lane Solve & Scene Race" },
+    { "from": 480, "to": 610, "label": "Visual-First Publishing & Audio" },
+    { "from": 625, "to": 740, "label": "Canvas Animation & Reporting" }
+  ],
+  "messages": [
+    {
+      "id": "msg_speech",
+      "from": "student",
+      "to": "livekit",
+      "y": 170,
+      "label": "Student voice audio stream",
+      "variant": "default"
+    },
+    {
+      "id": "msg_vad_turn",
+      "from": "livekit",
+      "to": "manager",
+      "y": 210,
+      "label": "VAD_START -> USER_TURN_DONE final transcript",
+      "variant": "emphasis"
+    },
+    {
+      "id": "msg_turn_req",
+      "from": "manager",
+      "to": "turn_plan",
+      "y": 240,
+      "label": "run_turn(TurnRequest, generation=G, kind='lesson')",
+      "variant": "emphasis"
+    },
+    {
+      "id": "msg_plan_solve",
+      "from": "turn_plan",
+      "to": "solve_lane",
+      "y": 300,
+      "label": "plan -> process_problem_ir_and_solve()",
+      "variant": "default"
+    },
+    {
+      "id": "msg_plan_scene",
+      "from": "turn_plan",
+      "to": "scene_lane",
+      "y": 335,
+      "label": "plan_and_compile_scene(join_budget=2.0s)",
+      "variant": "emphasis",
+      "note": "Dual-lane race: scene compiler runs concurrently with SymPy solver"
+    },
+    {
+      "id": "msg_solve_done",
+      "from": "solve_lane",
+      "to": "authority",
+      "y": 375,
+      "label": "solver_projection & contradiction audit",
+      "variant": "default"
+    },
+    {
+      "id": "msg_scene_done",
+      "from": "scene_lane",
+      "to": "authority",
+      "y": 410,
+      "label": "VerifiedDiagram & visual_status ('validated')",
+      "variant": "default"
+    },
+    {
+      "id": "msg_reconciled",
+      "from": "authority",
+      "to": "teaching",
+      "y": 445,
+      "label": "reconciled plan + solver number overrides",
+      "variant": "emphasis"
+    },
+    {
+      "id": "msg_send_step_evt",
+      "from": "teaching",
+      "to": "sync",
+      "y": 505,
+      "label": "send_event(StepEvt / DiagramCommit)",
+      "variant": "emphasis",
+      "note": "Visual-first rule: board ops sent on tutor.events BEFORE matching TTS speech begins"
+    },
+    {
+      "id": "msg_say_tts",
+      "from": "teaching",
+      "to": "livekit",
+      "y": 545,
+      "label": "session.say(tts_text consumer stream)",
+      "variant": "default",
+      "note": "Staleness guard: aborts if run cancelled or state.generation != req.generation"
+    },
+    {
+      "id": "msg_audio_words",
+      "from": "livekit",
+      "to": "sync",
+      "y": 585,
+      "label": "WebRTC audio track + transcript words (lk.transcription)",
+      "variant": "default"
+    },
+    {
+      "id": "msg_fire_op",
+      "from": "sync",
+      "to": "executor",
+      "y": 650,
+      "label": "onFireOp(BoardOp, generation, turnId)",
+      "variant": "emphasis",
+      "note": "Word matcher paces step ops with msPerWord EMA"
+    },
+    {
+      "id": "msg_step_ack",
+      "from": "executor",
+      "to": "manager",
+      "y": 695,
+      "label": "step_ack / step_progress on tutor.report",
+      "variant": "return",
+      "note": "Manager updates last_acked_step_index and server PageLedger"
+    }
+  ],
+  "activations": [
+    { "participant": "livekit", "from": 170, "to": 218, "type": "backend" },
+    { "participant": "manager", "from": 210, "to": 248, "type": "backend" },
+    { "participant": "turn_plan", "from": 240, "to": 345, "type": "backend" },
+    { "participant": "solve_lane", "from": 300, "to": 385, "type": "backend" },
+    { "participant": "scene_lane", "from": 335, "to": 420, "type": "backend" },
+    { "participant": "authority", "from": 375, "to": 455, "type": "backend" },
+    { "participant": "teaching", "from": 445, "to": 555, "type": "backend" },
+    { "participant": "livekit", "from": 545, "to": 595, "type": "backend" },
+    { "participant": "sync", "from": 505, "to": 660, "type": "frontend" },
+    { "participant": "executor", "from": 650, "to": 705, "type": "frontend" },
+    { "participant": "manager", "from": 695, "to": 730, "type": "backend" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Speech & Ingestion",
+      "items": [
+        "LiveKit VAD detects user speech; Deepgram nova-2 emits final transcript",
+        "StateMachineManager serializes event handling under an asyncio.Lock",
+        "Fast-path classifier resolves user turn into ConvEvent.CLS_NEW_QUESTION"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Dual-Lane LangGraph",
+      "items": [
+        "turn_plan node launches problem_ir_and_solve and plan_and_compile_scene in parallel",
+        "SymPy solver generates deterministic algebraic projections and contradiction audits",
+        "reconcile_authority injects solver overrides before stream_teaching_turn runs"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Visual-First Synchronization",
+      "items": [
+        "StepEvt & DiagramCommit are published before matching TTS audio streams",
+        "Generation guard aborts turn generation if an interrupt bumps state generation",
+        "TranscriptSyncMatcher aligns spoken words to board ops and reports progress to server"
+      ]
+    }
+  ]
+}

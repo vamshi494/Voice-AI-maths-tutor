@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Math Tutor — Architecture &amp; docs</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #171a21;
+      --panel-border: #262b36;
+      --text: #e7e9ee;
+      --dim: #9aa3b2;
+      --accent: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+    header { max-width: 1040px; margin: 0 auto; padding: 56px 24px 8px; }
+    header h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: -0.01em; }
+    header p { margin: 0; color: var(--dim); font-size: 16px; }
+    main {
+      max-width: 1040px; margin: 0 auto; padding: 28px 24px 64px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+    }
+    a.card {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--panel); border: 1px solid var(--panel-border); border-radius: 14px;
+      overflow: hidden; transition: transform .15s ease, border-color .15s ease;
+    }
+    a.card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    a.card img { width: 100%; display: block; background: #fff; aspect-ratio: 1440 / 900; object-fit: cover; }
+    a.card .body { padding: 16px 18px 20px; }
+    a.card h2 { margin: 0 0 6px; font-size: 17px; }
+    a.card p { margin: 0; color: var(--dim); font-size: 14px; }
+    footer {
+      max-width: 1040px; margin: 0 auto; padding: 0 24px 64px;
+      color: var(--dim); font-size: 14px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Math Tutor</h1>
+    <p>Architecture, turn lifecycle and chapter lesson flow — self-contained interactive diagrams.</p>
+  </header>
+
+  <main>
+    <a class="card" href="diagrams/01-system-architecture.html">
+      <img src="diagrams/01-system-architecture.visual-check.1440x900.light.png"
+           alt="System architecture diagram" loading="lazy" />
+      <div class="body">
+        <h2>System architecture</h2>
+        <p>The voice agent, LLM gateway, state machine, scene engine and persistence.</p>
+      </div>
+    </a>
+
+    <a class="card" href="diagrams/02-turn-lifecycle-sequence.html">
+      <img src="diagrams/02-turn-lifecycle-sequence.visual-check.1440x900.light.png"
+           alt="Turn lifecycle sequence diagram" loading="lazy" />
+      <div class="body">
+        <h2>Turn lifecycle</h2>
+        <p>From a question to planned steps, board operations, speech and sync.</p>
+      </div>
+    </a>
+
+    <a class="card" href="diagrams/04-chapter-page-flow.html">
+      <img src="diagrams/04-chapter-page-flow.visual-check.1440x900.light.png"
+           alt="Chapter page flow diagram" loading="lazy" />
+      <div class="body">
+        <h2>Chapter page flow</h2>
+        <p>How a topic becomes a multi-page chapter with figures carried forward.</p>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <p>
+      More: <a href="USER_GUIDE.html">User guide</a> ·
+      <a href="design-improvements.html">Design notes</a> ·
+      <a href="diagrams/README.html">All diagrams</a>
+    </p>
+  </footer>
+</body>
+</html>

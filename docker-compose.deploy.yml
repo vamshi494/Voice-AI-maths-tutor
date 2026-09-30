@@ -1,0 +1,81 @@
+# Full stack: LiveKit + Postgres + API + voice worker + web (Caddy).
+#   docker compose -f docker-compose.deploy.yml up -d --build
+# Keys and models come from .env (see deploy/README.md). Open ports on the host:
+#   80/443 tcp (web), 7881 tcp + 50000-50100 udp (LiveKit media).
+name: ai-math-tutor
+
+x-backend-env: &backend-env
+  DATABASE_URL: postgresql+asyncpg://postgres:${POSTGRES_PASSWORD:-postgres}@postgres:5432/math_tutor
+  LIVEKIT_URL: ws://livekit:7880
+  LIVEKIT_API_KEY: ${LIVEKIT_API_KEY:?set LIVEKIT_API_KEY in .env}
+  LIVEKIT_API_SECRET: ${LIVEKIT_API_SECRET:?set LIVEKIT_API_SECRET in .env}
+  FEATURE_MEMORY: "true"
+  FEATURE_REHYDRATE: "true"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: math_tutor
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d math_tutor"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  livekit:
+    image: livekit/livekit-server:latest
+    restart: unless-stopped
+    command: --config /etc/livekit.yaml --node-ip ${LIVEKIT_NODE_IP:-127.0.0.1}
+    environment:
+      LIVEKIT_KEYS: "${LIVEKIT_API_KEY}: ${LIVEKIT_API_SECRET}"
+    volumes:
+      - ./deploy/livekit.yaml:/etc/livekit.yaml:ro
+    ports:
+      - "7881:7881"
+      - "50000-50100:50000-50100/udp"
+
+  api:
+    build: { context: ., dockerfile: deploy/backend.Dockerfile }
+    image: ai-math-tutor-backend
+    restart: unless-stopped
+    env_file: .env
+    environment: *backend-env
+    depends_on:
+      postgres: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  worker:
+    image: ai-math-tutor-backend
+    restart: unless-stopped
+    command: ["python", "backend/app/main.py", "start"]
+    env_file: .env
+    environment: *backend-env
+    depends_on:
+      api: { condition: service_healthy }
+      livekit: { condition: service_started }
+
+  web:
+    build: { context: ., dockerfile: deploy/frontend.Dockerfile }
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+    depends_on: [api, livekit]
+
+volumes:
+  pgdata:
+  caddy_data:

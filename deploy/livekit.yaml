@@ -1,0 +1,13 @@
+# LiveKit server for docker-compose.deploy.yml. Keys come from LIVEKIT_KEYS and the public IP
+# from --node-ip (both set in the compose file from .env).
+port: 7880
+bind_addresses:
+  - "0.0.0.0"
+rtc:
+  tcp_port: 7881
+  port_range_start: 50000
+  port_range_end: 50100
+  use_external_ip: false
+logging:
+  json: false
+  level: info

@@ -1,0 +1,3190 @@
+{
+    "inputs": {
+        "request": {
+            "kind": "lesson",
+            "generation": 1,
+            "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+            "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+            "marks": [],
+            "requires_new_figure": false
+        },
+        "steps": [],
+        "raw_response": "",
+        "row_tracker": "<app.tutor.board_rows.BoardRowTracker object at 0x1659f5760>",
+        "agent_state": {
+            "session_id": "545e97ec-f8de-4311-b259-5b809889efec",
+            "user_id": "anonymous",
+            "board_id": "b_24ced51a",
+            "generation": 1,
+            "conv_state": "AGENT_SPEAKING",
+            "page": {
+                "board_id": "b_24ced51a",
+                "page_id": "p_2af4e404",
+                "lesson_question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                "turn_plan": {
+                    "schema_version": "turn-plan/v3",
+                    "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                    "givens": [],
+                    "unknowns": [],
+                    "derived": [],
+                    "qualitative_claims": [
+                        {
+                            "id": "c1",
+                            "claim": "DE is parallel to AC",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "D",
+                                "E",
+                                "A",
+                                "C"
+                            ]
+                        },
+                        {
+                            "id": "c2",
+                            "claim": "DF is parallel to AE",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "D",
+                                "F",
+                                "A",
+                                "E"
+                            ]
+                        },
+                        {
+                            "id": "c3",
+                            "claim": "In triangle ABE, DF parallel AE implies BF/FE equals BD/DA",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "F",
+                                "E",
+                                "D",
+                                "A"
+                            ]
+                        },
+                        {
+                            "id": "c4",
+                            "claim": "In triangle ABC, DE parallel AC implies BD/DA equals BE/EC",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "D",
+                                "A",
+                                "E",
+                                "C"
+                            ]
+                        },
+                        {
+                            "id": "c5",
+                            "claim": "BF/FE equals BE/EC by transitivity through BD/DA",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "F",
+                                "E",
+                                "C"
+                            ]
+                        }
+                    ],
+                    "law_ids": [
+                        "basic_proportionality_theorem",
+                        "transitive_property_of_equality"
+                    ],
+                    "assumptions": [
+                        "ABC is a triangle with base BC",
+                        "D lies on side AB",
+                        "F and E lie on BC in order B-F-E-C"
+                    ],
+                    "visual_requirement": "required"
+                },
+                "diagram": {
+                    "id": "verified_scene",
+                    "name": "point_figure",
+                    "commands": [
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                780,
+                                195.17,
+                                3.5
+                            ],
+                            "anchor_id": "A",
+                            "semantic_ref": {
+                                "entity_id": "A"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                490.34,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "B",
+                            "semantic_ref": {
+                                "entity_id": "B"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                1069.66,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "C",
+                            "semantic_ref": {
+                                "entity_id": "C"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                606.21,
+                                368.97,
+                                3.5
+                            ],
+                            "anchor_id": "D",
+                            "semantic_ref": {
+                                "entity_id": "D"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                583.03,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "F",
+                            "semantic_ref": {
+                                "entity_id": "F"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                722.07,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "E",
+                            "semantic_ref": {
+                                "entity_id": "E"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                780,
+                                195.17,
+                                490.34,
+                                484.83
+                            ],
+                            "anchor_id": "AB",
+                            "semantic_ref": {
+                                "entity_id": "AB"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                490.34,
+                                484.83,
+                                1069.66,
+                                484.83
+                            ],
+                            "anchor_id": "BC",
+                            "semantic_ref": {
+                                "entity_id": "BC"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                1069.66,
+                                484.83,
+                                780,
+                                195.17
+                            ],
+                            "anchor_id": "CA",
+                            "semantic_ref": {
+                                "entity_id": "CA"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                780,
+                                195.17,
+                                722.07,
+                                484.83
+                            ],
+                            "anchor_id": "AE",
+                            "semantic_ref": {
+                                "entity_id": "AE"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                606.21,
+                                368.97,
+                                722.07,
+                                484.83
+                            ],
+                            "anchor_id": "DE",
+                            "semantic_ref": {
+                                "entity_id": "DE"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                606.21,
+                                368.97,
+                                583.03,
+                                484.83
+                            ],
+                            "anchor_id": "DF",
+                            "semantic_ref": {
+                                "entity_id": "DF"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                775,
+                                170.17,
+                                18
+                            ],
+                            "text": "A",
+                            "anchor_id": "A",
+                            "semantic_ref": {
+                                "entity_id": "A"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                485.34,
+                                459.83,
+                                18
+                            ],
+                            "text": "B",
+                            "anchor_id": "B",
+                            "semantic_ref": {
+                                "entity_id": "B"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                1064.66,
+                                459.83,
+                                18
+                            ],
+                            "text": "C",
+                            "anchor_id": "C",
+                            "semantic_ref": {
+                                "entity_id": "C"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                601.21,
+                                343.97,
+                                18
+                            ],
+                            "text": "D",
+                            "anchor_id": "D",
+                            "semantic_ref": {
+                                "entity_id": "D"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                578.03,
+                                459.83,
+                                18
+                            ],
+                            "text": "F",
+                            "anchor_id": "F",
+                            "semantic_ref": {
+                                "entity_id": "F"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                717.07,
+                                459.83,
+                                18
+                            ],
+                            "text": "E",
+                            "anchor_id": "E",
+                            "semantic_ref": {
+                                "entity_id": "E"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                670.14,
+                                432.9,
+                                16
+                            ],
+                            "text": "DE || AC",
+                            "anchor_id": "DE",
+                            "semantic_ref": {
+                                "entity_id": "DE"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                600.62,
+                                432.9,
+                                16
+                            ],
+                            "text": "DF || AE",
+                            "anchor_id": "DF",
+                            "semantic_ref": {
+                                "entity_id": "DF"
+                            }
+                        }
+                    ],
+                    "anchors": [
+                        {
+                            "id": "A",
+                            "labels": [
+                                "A"
+                            ],
+                            "x": 775,
+                            "y": 170.17,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "B",
+                            "labels": [
+                                "B"
+                            ],
+                            "x": 485.34,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "C",
+                            "labels": [
+                                "C"
+                            ],
+                            "x": 1064.66,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "D",
+                            "labels": [
+                                "D"
+                            ],
+                            "x": 601.21,
+                            "y": 343.97,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "F",
+                            "labels": [
+                                "F"
+                            ],
+                            "x": 578.03,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "E",
+                            "labels": [
+                                "E"
+                            ],
+                            "x": 717.07,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "AB",
+                            "labels": [],
+                            "x": 490.34,
+                            "y": 195.17,
+                            "width": 289.66,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "BC",
+                            "labels": [],
+                            "x": 490.34,
+                            "y": 484.83,
+                            "width": 579.32,
+                            "height": 10
+                        },
+                        {
+                            "id": "CA",
+                            "labels": [],
+                            "x": 780,
+                            "y": 195.17,
+                            "width": 289.66,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "AE",
+                            "labels": [],
+                            "x": 722.07,
+                            "y": 195.17,
+                            "width": 57.93,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "DE",
+                            "labels": [],
+                            "x": 606.21,
+                            "y": 368.97,
+                            "width": 115.86,
+                            "height": 115.86
+                        },
+                        {
+                            "id": "DF",
+                            "labels": [],
+                            "x": 583.03,
+                            "y": 368.97,
+                            "width": 23.18,
+                            "height": 115.86
+                        }
+                    ],
+                    "reveals": [
+                        {
+                            "narration": "Reveal group g_setup",
+                            "command_indices": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18,
+                                19
+                            ],
+                            "kind": "reveal",
+                            "target_id": "g_setup"
+                        },
+                        {
+                            "narration": "Reveal group g_parallel",
+                            "command_indices": [],
+                            "kind": "reveal",
+                            "target_id": "g_parallel"
+                        }
+                    ],
+                    "prompt_addon": "figure: point_figure\nparts you may [FOCUS] (use each id exactly):\n- A: point A\n- B: point B\n- C: point C\n- D: point D\n- F: point F\n- E: point E\n- AB: side AB\n- BC: side BC\n- CA: side CA\n- AE: side AE\n- DE: side DE\n- DF: side DF\nreveal groups you may [FOCUS]: g_setup, g_parallel",
+                    "caption": "Triangle ABC with D on AB and B-F-E-C on base, with DE parallel AC and DF parallel AE.",
+                    "label_glossary": {
+                        "A": {
+                            "symbol": "A",
+                            "title": "point A"
+                        },
+                        "B": {
+                            "symbol": "B",
+                            "title": "point B"
+                        },
+                        "C": {
+                            "symbol": "C",
+                            "title": "point C"
+                        },
+                        "D": {
+                            "symbol": "D",
+                            "title": "point D"
+                        },
+                        "F": {
+                            "symbol": "F",
+                            "title": "point F"
+                        },
+                        "E": {
+                            "symbol": "E",
+                            "title": "point E"
+                        }
+                    },
+                    "namespace": ""
+                },
+                "visual_status": "validated",
+                "figure_drawn": true,
+                "turn_kind": "lesson",
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "continues_board": false,
+                "saved": false,
+                "lesson_completed": false
+            },
+            "active_turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+            "active_turn_kind": "lesson",
+            "steps_sent": [
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 0,
+                    "spoken_text": "Look at this triangle figure, we want to prove a lovely ratio result about the segments on the base.",
+                    "words": [
+                        "look",
+                        "at",
+                        "this",
+                        "triangle",
+                        "figure",
+                        "we",
+                        "want",
+                        "to",
+                        "prove",
+                        "a",
+                        "lovely",
+                        "ratio",
+                        "result",
+                        "about",
+                        "the",
+                        "segments",
+                        "on",
+                        "the",
+                        "base"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:0:0",
+                            "kind": "WRITE",
+                            "at_word": 19,
+                            "text": "To prove: BF/FE = BE/EC",
+                            "row_id": "w1"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 1,
+                    "spoken_text": "Look at this figure with triangle A B C and points D, F, E inside it.",
+                    "words": [
+                        "look",
+                        "at",
+                        "this",
+                        "figure",
+                        "with",
+                        "triangle",
+                        "a",
+                        "b",
+                        "c",
+                        "and",
+                        "points",
+                        "d",
+                        "f",
+                        "e",
+                        "inside",
+                        "it"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:1:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "g_setup",
+                            "focus_mode": "outline"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 2,
+                    "spoken_text": "Notice segment DE is parallel to side AC in our figure.",
+                    "words": [
+                        "notice",
+                        "segment",
+                        "de",
+                        "is",
+                        "parallel",
+                        "to",
+                        "side",
+                        "ac",
+                        "in",
+                        "our",
+                        "figure"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "DE",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:1",
+                            "kind": "FOCUS",
+                            "at_word": 8,
+                            "entity_id": "CA",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:2",
+                            "kind": "WRITE",
+                            "at_word": 11,
+                            "text": "DE ∥ AC",
+                            "row_id": "w2"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 3,
+                    "spoken_text": "Follow segment DF which is parallel to segment AE .",
+                    "words": [
+                        "follow",
+                        "segment",
+                        "df",
+                        "which",
+                        "is",
+                        "parallel",
+                        "to",
+                        "segment",
+                        "ae"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "DF",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:1",
+                            "kind": "FOCUS",
+                            "at_word": 9,
+                            "entity_id": "AE",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:2",
+                            "kind": "WRITE",
+                            "at_word": 9,
+                            "text": "DF ∥ AE",
+                            "row_id": "w3"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 4,
+                    "spoken_text": "Now look at the smaller triangle with vertex A and vertex B and E on the base.",
+                    "words": [
+                        "now",
+                        "look",
+                        "at",
+                        "the",
+                        "smaller",
+                        "triangle",
+                        "with",
+                        "vertex",
+                        "a",
+                        "and",
+                        "vertex",
+                        "b",
+                        "and",
+                        "e",
+                        "on",
+                        "the",
+                        "base"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:0",
+                            "kind": "FOCUS",
+                            "at_word": 9,
+                            "entity_id": "A",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:1",
+                            "kind": "FOCUS",
+                            "at_word": 12,
+                            "entity_id": "B",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:2",
+                            "kind": "WRITE",
+                            "at_word": 17,
+                            "text": "In △ABE, DF ∥ AE",
+                            "row_id": "w4"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 5,
+                    "spoken_text": "By Basic Proportionality Theorem, a parallel line divides the two sides in the same ratio.",
+                    "words": [
+                        "by",
+                        "basic",
+                        "proportionality",
+                        "theorem",
+                        "a",
+                        "parallel",
+                        "line",
+                        "divides",
+                        "the",
+                        "two",
+                        "sides",
+                        "in",
+                        "the",
+                        "same",
+                        "ratio"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:5:0",
+                            "kind": "WRITE",
+                            "at_word": 15,
+                            "text": "BF/FE = BD/DA",
+                            "row_id": "w5"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 6,
+                    "spoken_text": "This is side AB where point D lies, part of the big triangle.",
+                    "words": [
+                        "this",
+                        "is",
+                        "side",
+                        "ab",
+                        "where",
+                        "point",
+                        "d",
+                        "lies",
+                        "part",
+                        "of",
+                        "the",
+                        "big",
+                        "triangle"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "AB",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:1",
+                            "kind": "FOCUS",
+                            "at_word": 7,
+                            "entity_id": "D",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:2",
+                            "kind": "WRITE",
+                            "at_word": 13,
+                            "text": "In △ABC, DE ∥ AC",
+                            "row_id": "w6"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 7,
+                    "spoken_text": "Follow the base BC up to point C to see the second division.",
+                    "words": [
+                        "follow",
+                        "the",
+                        "base",
+                        "bc",
+                        "up",
+                        "to",
+                        "point",
+                        "c",
+                        "to",
+                        "see",
+                        "the",
+                        "second",
+                        "division"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "BC",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:1",
+                            "kind": "FOCUS",
+                            "at_word": 8,
+                            "entity_id": "C",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:2",
+                            "kind": "WRITE",
+                            "at_word": 13,
+                            "text": "BD/DA = BE/EC",
+                            "row_id": "w7"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 8,
+                    "spoken_text": "Notice point F and point E give the same middle ratio B D by D A, so the two outer ratios match.",
+                    "words": [
+                        "notice",
+                        "point",
+                        "f",
+                        "and",
+                        "point",
+                        "e",
+                        "give",
+                        "the",
+                        "same",
+                        "middle",
+                        "ratio",
+                        "b",
+                        "d",
+                        "by",
+                        "d",
+                        "a",
+                        "so",
+                        "the",
+                        "two",
+                        "outer",
+                        "ratios",
+                        "match"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "F",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:1",
+                            "kind": "FOCUS",
+                            "at_word": 6,
+                            "entity_id": "E",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:2",
+                            "kind": "WRITE",
+                            "at_word": 22,
+                            "text": "BF/FE = BE/EC",
+                            "row_id": "w8"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:3",
+                            "kind": "EMPHASIZE",
+                            "at_word": 22,
+                            "emphasize_row_id": "w8"
+                        }
+                    ]
+                }
+            ],
+            "last_acked_step_index": -1,
+            "acked_op_ids": [],
+            "current_step_index": 8,
+            "pending_request": {
+                "kind": "lesson",
+                "generation": 1,
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                "marks": [],
+                "requires_new_figure": false
+            },
+            "interrupt_transcript": "",
+            "doubt_awaiting_resolution": false,
+            "marker_armed": false,
+            "tts_speed": 1,
+            "redirect_cursor": 0,
+            "history": [],
+            "lesson_topic": "basic proportionality theorem"
+        },
+        "history": [],
+        "stored_turns": [],
+        "gw": "<app.gateway.groq_client.GroqGateway object at 0x16604e180>"
+    },
+    "outputs": {
+        "request": {
+            "kind": "lesson",
+            "generation": 1,
+            "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+            "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+            "marks": [],
+            "requires_new_figure": false
+        },
+        "plan": {
+            "schema_version": "turn-plan/v3",
+            "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+            "givens": [],
+            "unknowns": [],
+            "derived": [],
+            "qualitative_claims": [
+                {
+                    "id": "c1",
+                    "claim": "DE is parallel to AC",
+                    "expected": true,
+                    "related_quantity_ids": [],
+                    "related_entity_hints": [
+                        "D",
+                        "E",
+                        "A",
+                        "C"
+                    ]
+                },
+                {
+                    "id": "c2",
+                    "claim": "DF is parallel to AE",
+                    "expected": true,
+                    "related_quantity_ids": [],
+                    "related_entity_hints": [
+                        "D",
+                        "F",
+                        "A",
+                        "E"
+                    ]
+                },
+                {
+                    "id": "c3",
+                    "claim": "In triangle ABE, DF parallel AE implies BF/FE equals BD/DA",
+                    "expected": true,
+                    "related_quantity_ids": [],
+                    "related_entity_hints": [
+                        "B",
+                        "F",
+                        "E",
+                        "D",
+                        "A"
+                    ]
+                },
+                {
+                    "id": "c4",
+                    "claim": "In triangle ABC, DE parallel AC implies BD/DA equals BE/EC",
+                    "expected": true,
+                    "related_quantity_ids": [],
+                    "related_entity_hints": [
+                        "B",
+                        "D",
+                        "A",
+                        "E",
+                        "C"
+                    ]
+                },
+                {
+                    "id": "c5",
+                    "claim": "BF/FE equals BE/EC by transitivity through BD/DA",
+                    "expected": true,
+                    "related_quantity_ids": [],
+                    "related_entity_hints": [
+                        "B",
+                        "F",
+                        "E",
+                        "C"
+                    ]
+                }
+            ],
+            "law_ids": [
+                "basic_proportionality_theorem",
+                "transitive_property_of_equality"
+            ],
+            "assumptions": [
+                "ABC is a triangle with base BC",
+                "D lies on side AB",
+                "F and E lie on BC in order B-F-E-C"
+            ],
+            "visual_requirement": "required"
+        },
+        "problem_ir": null,
+        "solver": null,
+        "audit": {
+            "status": "incomplete",
+            "issues": [
+                {
+                    "code": "problem_ir_failed"
+                }
+            ],
+            "bindings": []
+        },
+        "scene": {
+            "schema_version": "scene-document/v2",
+            "visual_decision": "scene",
+            "source": "{'question': 'In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC'}",
+            "quantities": [],
+            "entities": [
+                {
+                    "id": "A",
+                    "kind": "point",
+                    "label": "A",
+                    "visible": true
+                },
+                {
+                    "id": "B",
+                    "kind": "point",
+                    "label": "B",
+                    "visible": true
+                },
+                {
+                    "id": "C",
+                    "kind": "point",
+                    "label": "C",
+                    "visible": true
+                },
+                {
+                    "id": "D",
+                    "kind": "point",
+                    "label": "D",
+                    "visible": true
+                },
+                {
+                    "id": "F",
+                    "kind": "point",
+                    "label": "F",
+                    "visible": true
+                },
+                {
+                    "id": "E",
+                    "kind": "point",
+                    "label": "E",
+                    "visible": true
+                },
+                {
+                    "id": "AB",
+                    "kind": "segment",
+                    "visible": true
+                },
+                {
+                    "id": "BC",
+                    "kind": "segment",
+                    "visible": true
+                },
+                {
+                    "id": "CA",
+                    "kind": "segment",
+                    "visible": true
+                },
+                {
+                    "id": "AE",
+                    "kind": "segment",
+                    "visible": true
+                },
+                {
+                    "id": "DE",
+                    "kind": "segment",
+                    "visible": true
+                },
+                {
+                    "id": "DF",
+                    "kind": "segment",
+                    "visible": true
+                }
+            ],
+            "constructions": [
+                {
+                    "id": "A",
+                    "operator": "point",
+                    "inputs": {
+                        "x": 0,
+                        "y": 4
+                    },
+                    "outputs": [
+                        "A"
+                    ]
+                },
+                {
+                    "id": "B",
+                    "operator": "point",
+                    "inputs": {
+                        "x": -4,
+                        "y": 0
+                    },
+                    "outputs": [
+                        "B"
+                    ]
+                },
+                {
+                    "id": "C",
+                    "operator": "point",
+                    "inputs": {
+                        "x": 4,
+                        "y": 0
+                    },
+                    "outputs": [
+                        "C"
+                    ]
+                },
+                {
+                    "id": "D",
+                    "operator": "point",
+                    "inputs": {
+                        "x": -2.4,
+                        "y": 1.6
+                    },
+                    "outputs": [
+                        "D"
+                    ]
+                },
+                {
+                    "id": "F",
+                    "operator": "point",
+                    "inputs": {
+                        "x": -2.72,
+                        "y": 0
+                    },
+                    "outputs": [
+                        "F"
+                    ]
+                },
+                {
+                    "id": "E",
+                    "operator": "point",
+                    "inputs": {
+                        "x": -0.8,
+                        "y": 0
+                    },
+                    "outputs": [
+                        "E"
+                    ]
+                },
+                {
+                    "id": "AB",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "A",
+                        "to": "B"
+                    },
+                    "outputs": [
+                        "AB"
+                    ]
+                },
+                {
+                    "id": "BC",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "B",
+                        "to": "C"
+                    },
+                    "outputs": [
+                        "BC"
+                    ]
+                },
+                {
+                    "id": "CA",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "C",
+                        "to": "A"
+                    },
+                    "outputs": [
+                        "CA"
+                    ]
+                },
+                {
+                    "id": "AE",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "A",
+                        "to": "E"
+                    },
+                    "outputs": [
+                        "AE"
+                    ]
+                },
+                {
+                    "id": "DE",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "D",
+                        "to": "E"
+                    },
+                    "outputs": [
+                        "DE"
+                    ]
+                },
+                {
+                    "id": "DF",
+                    "operator": "segment",
+                    "inputs": {
+                        "from": "D",
+                        "to": "F"
+                    },
+                    "outputs": [
+                        "DF"
+                    ]
+                }
+            ],
+            "relations": [],
+            "assertions": [
+                {
+                    "id": "as1",
+                    "predicate": "collinear",
+                    "entities": [
+                        "B",
+                        "F",
+                        "E",
+                        "C"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                },
+                {
+                    "id": "as2",
+                    "predicate": "incident",
+                    "entities": [
+                        "D",
+                        "AB"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                },
+                {
+                    "id": "as3",
+                    "predicate": "on",
+                    "entities": [
+                        "F",
+                        "BC"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                },
+                {
+                    "id": "as4",
+                    "predicate": "on",
+                    "entities": [
+                        "E",
+                        "BC"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                },
+                {
+                    "id": "as5",
+                    "predicate": "parallel",
+                    "entities": [
+                        "DE",
+                        "CA"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                },
+                {
+                    "id": "as6",
+                    "predicate": "parallel",
+                    "entities": [
+                        "DF",
+                        "AE"
+                    ],
+                    "expected": true,
+                    "severity": "error"
+                }
+            ],
+            "annotations": [
+                {
+                    "id": "cap1",
+                    "kind": "caption",
+                    "target_ids": [
+                        "AB",
+                        "BC",
+                        "CA",
+                        "AE",
+                        "DE",
+                        "DF"
+                    ],
+                    "text": "Triangle ABC with D on AB and B-F-E-C on base, with DE parallel AC and DF parallel AE."
+                },
+                {
+                    "id": "an1",
+                    "kind": "callout",
+                    "target_ids": [
+                        "DE",
+                        "CA"
+                    ],
+                    "text": "DE || AC",
+                    "placement_intent": "offset"
+                },
+                {
+                    "id": "an2",
+                    "kind": "callout",
+                    "target_ids": [
+                        "DF",
+                        "AE"
+                    ],
+                    "text": "DF || AE",
+                    "placement_intent": "offset"
+                }
+            ],
+            "required_entity_ids": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "F",
+                "E",
+                "AB",
+                "BC",
+                "CA",
+                "AE",
+                "DE",
+                "DF"
+            ],
+            "reveal_groups": [
+                {
+                    "id": "g_setup",
+                    "entity_ids": [
+                        "A",
+                        "B",
+                        "C",
+                        "D",
+                        "F",
+                        "E",
+                        "AB",
+                        "BC",
+                        "CA",
+                        "AE",
+                        "DE",
+                        "DF"
+                    ]
+                },
+                {
+                    "id": "g_parallel",
+                    "entity_ids": []
+                }
+            ],
+            "teaching_timeline": [
+                {
+                    "action": "",
+                    "target_id": ""
+                }
+            ]
+        },
+        "report": {
+            "valid": true,
+            "errors": [],
+            "warnings": [],
+            "evaluated_assertions": 6,
+            "passed_assertions": 6
+        },
+        "diagram": {
+            "id": "verified_scene",
+            "name": "point_figure",
+            "commands": [
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        780,
+                        195.17,
+                        3.5
+                    ],
+                    "anchor_id": "A",
+                    "semantic_ref": {
+                        "entity_id": "A"
+                    }
+                },
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        490.34,
+                        484.83,
+                        3.5
+                    ],
+                    "anchor_id": "B",
+                    "semantic_ref": {
+                        "entity_id": "B"
+                    }
+                },
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        1069.66,
+                        484.83,
+                        3.5
+                    ],
+                    "anchor_id": "C",
+                    "semantic_ref": {
+                        "entity_id": "C"
+                    }
+                },
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        606.21,
+                        368.97,
+                        3.5
+                    ],
+                    "anchor_id": "D",
+                    "semantic_ref": {
+                        "entity_id": "D"
+                    }
+                },
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        583.03,
+                        484.83,
+                        3.5
+                    ],
+                    "anchor_id": "F",
+                    "semantic_ref": {
+                        "entity_id": "F"
+                    }
+                },
+                {
+                    "type": "DRAW_POINT",
+                    "params": [
+                        722.07,
+                        484.83,
+                        3.5
+                    ],
+                    "anchor_id": "E",
+                    "semantic_ref": {
+                        "entity_id": "E"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        780,
+                        195.17,
+                        490.34,
+                        484.83
+                    ],
+                    "anchor_id": "AB",
+                    "semantic_ref": {
+                        "entity_id": "AB"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        490.34,
+                        484.83,
+                        1069.66,
+                        484.83
+                    ],
+                    "anchor_id": "BC",
+                    "semantic_ref": {
+                        "entity_id": "BC"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        1069.66,
+                        484.83,
+                        780,
+                        195.17
+                    ],
+                    "anchor_id": "CA",
+                    "semantic_ref": {
+                        "entity_id": "CA"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        780,
+                        195.17,
+                        722.07,
+                        484.83
+                    ],
+                    "anchor_id": "AE",
+                    "semantic_ref": {
+                        "entity_id": "AE"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        606.21,
+                        368.97,
+                        722.07,
+                        484.83
+                    ],
+                    "anchor_id": "DE",
+                    "semantic_ref": {
+                        "entity_id": "DE"
+                    }
+                },
+                {
+                    "type": "DRAW_LINE",
+                    "params": [
+                        606.21,
+                        368.97,
+                        583.03,
+                        484.83
+                    ],
+                    "anchor_id": "DF",
+                    "semantic_ref": {
+                        "entity_id": "DF"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        775,
+                        170.17,
+                        18
+                    ],
+                    "text": "A",
+                    "anchor_id": "A",
+                    "semantic_ref": {
+                        "entity_id": "A"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        485.34,
+                        459.83,
+                        18
+                    ],
+                    "text": "B",
+                    "anchor_id": "B",
+                    "semantic_ref": {
+                        "entity_id": "B"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        1064.66,
+                        459.83,
+                        18
+                    ],
+                    "text": "C",
+                    "anchor_id": "C",
+                    "semantic_ref": {
+                        "entity_id": "C"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        601.21,
+                        343.97,
+                        18
+                    ],
+                    "text": "D",
+                    "anchor_id": "D",
+                    "semantic_ref": {
+                        "entity_id": "D"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        578.03,
+                        459.83,
+                        18
+                    ],
+                    "text": "F",
+                    "anchor_id": "F",
+                    "semantic_ref": {
+                        "entity_id": "F"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        717.07,
+                        459.83,
+                        18
+                    ],
+                    "text": "E",
+                    "anchor_id": "E",
+                    "semantic_ref": {
+                        "entity_id": "E"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        670.14,
+                        432.9,
+                        16
+                    ],
+                    "text": "DE || AC",
+                    "anchor_id": "DE",
+                    "semantic_ref": {
+                        "entity_id": "DE"
+                    }
+                },
+                {
+                    "type": "LABEL",
+                    "params": [
+                        600.62,
+                        432.9,
+                        16
+                    ],
+                    "text": "DF || AE",
+                    "anchor_id": "DF",
+                    "semantic_ref": {
+                        "entity_id": "DF"
+                    }
+                }
+            ],
+            "anchors": [
+                {
+                    "id": "A",
+                    "labels": [
+                        "A"
+                    ],
+                    "x": 775,
+                    "y": 170.17,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "B",
+                    "labels": [
+                        "B"
+                    ],
+                    "x": 485.34,
+                    "y": 459.83,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "C",
+                    "labels": [
+                        "C"
+                    ],
+                    "x": 1064.66,
+                    "y": 459.83,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "D",
+                    "labels": [
+                        "D"
+                    ],
+                    "x": 601.21,
+                    "y": 343.97,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "F",
+                    "labels": [
+                        "F"
+                    ],
+                    "x": 578.03,
+                    "y": 459.83,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "E",
+                    "labels": [
+                        "E"
+                    ],
+                    "x": 717.07,
+                    "y": 459.83,
+                    "width": 10,
+                    "height": 29
+                },
+                {
+                    "id": "AB",
+                    "labels": [],
+                    "x": 490.34,
+                    "y": 195.17,
+                    "width": 289.66,
+                    "height": 289.66
+                },
+                {
+                    "id": "BC",
+                    "labels": [],
+                    "x": 490.34,
+                    "y": 484.83,
+                    "width": 579.32,
+                    "height": 10
+                },
+                {
+                    "id": "CA",
+                    "labels": [],
+                    "x": 780,
+                    "y": 195.17,
+                    "width": 289.66,
+                    "height": 289.66
+                },
+                {
+                    "id": "AE",
+                    "labels": [],
+                    "x": 722.07,
+                    "y": 195.17,
+                    "width": 57.93,
+                    "height": 289.66
+                },
+                {
+                    "id": "DE",
+                    "labels": [],
+                    "x": 606.21,
+                    "y": 368.97,
+                    "width": 115.86,
+                    "height": 115.86
+                },
+                {
+                    "id": "DF",
+                    "labels": [],
+                    "x": 583.03,
+                    "y": 368.97,
+                    "width": 23.18,
+                    "height": 115.86
+                }
+            ],
+            "reveals": [
+                {
+                    "narration": "Reveal group g_setup",
+                    "command_indices": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19
+                    ],
+                    "kind": "reveal",
+                    "target_id": "g_setup"
+                },
+                {
+                    "narration": "Reveal group g_parallel",
+                    "command_indices": [],
+                    "kind": "reveal",
+                    "target_id": "g_parallel"
+                }
+            ],
+            "prompt_addon": "figure: point_figure\nparts you may [FOCUS] (use each id exactly):\n- A: point A\n- B: point B\n- C: point C\n- D: point D\n- F: point F\n- E: point E\n- AB: side AB\n- BC: side BC\n- CA: side CA\n- AE: side AE\n- DE: side DE\n- DF: side DF\nreveal groups you may [FOCUS]: g_setup, g_parallel",
+            "caption": "Triangle ABC with D on AB and B-F-E-C on base, with DE parallel AC and DF parallel AE.",
+            "label_glossary": {
+                "A": {
+                    "symbol": "A",
+                    "title": "point A"
+                },
+                "B": {
+                    "symbol": "B",
+                    "title": "point B"
+                },
+                "C": {
+                    "symbol": "C",
+                    "title": "point C"
+                },
+                "D": {
+                    "symbol": "D",
+                    "title": "point D"
+                },
+                "F": {
+                    "symbol": "F",
+                    "title": "point F"
+                },
+                "E": {
+                    "symbol": "E",
+                    "title": "point E"
+                }
+            },
+            "namespace": ""
+        },
+        "visual_status": "validated",
+        "raw_response": "[STEP]\nLook at this triangle figure, we want to prove a lovely ratio result about the segments on the base. \n[WRITE:To prove: BF/FE = BE/EC]\n[/STEP]\n[STEP]\nLook at this figure [FOCUS:g_setup] with triangle A B C and points D, F, E inside it.\n[/STEP]\n[STEP]\nNotice segment DE [FOCUS:DE] is parallel to side AC [FOCUS:CA] in our figure. \n[WRITE:DE ∥ AC]\n[/STEP]\n[STEP]\nFollow segment DF [FOCUS:DF] which is parallel to segment AE [FOCUS:AE] . \n[WRITE:DF ∥ AE]\n[/STEP]\n[STEP]\nNow look at the smaller triangle with vertex A [FOCUS:A] and vertex B [FOCUS:B] and E on the base. \n[WRITE:In △ABE, DF ∥ AE]\n[/STEP]\n[STEP]\nBy Basic Proportionality Theorem, a parallel line divides the two sides in the same ratio. \n[WRITE:BF/FE = BD/DA]\n[/STEP]\n[STEP]\nThis is side AB [FOCUS:AB] where point D [FOCUS:D] lies, part of the big triangle. \n[WRITE:In △ABC, DE ∥ AC]\n[/STEP]\n[STEP]\nFollow the base BC [FOCUS:BC] up to point C [FOCUS:C] to see the second division. \n[WRITE:BD/DA = BE/EC]\n[/STEP]\n[STEP]\nNotice point F [FOCUS:F] and point E [FOCUS:E] give the same middle ratio B D by D A, so the two outer ratios match. \n[WRITE:BF/FE = BE/EC]\n[EMPHASIZE:last]\n[/STEP]\n",
+        "steps": [
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 0,
+                "spoken_text": "Look at this triangle figure, we want to prove a lovely ratio result about the segments on the base.",
+                "words": [
+                    "look",
+                    "at",
+                    "this",
+                    "triangle",
+                    "figure",
+                    "we",
+                    "want",
+                    "to",
+                    "prove",
+                    "a",
+                    "lovely",
+                    "ratio",
+                    "result",
+                    "about",
+                    "the",
+                    "segments",
+                    "on",
+                    "the",
+                    "base"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:0:0",
+                        "kind": "WRITE",
+                        "at_word": 19,
+                        "text": "To prove: BF/FE = BE/EC",
+                        "row_id": "w1"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 1,
+                "spoken_text": "Look at this figure with triangle A B C and points D, F, E inside it.",
+                "words": [
+                    "look",
+                    "at",
+                    "this",
+                    "figure",
+                    "with",
+                    "triangle",
+                    "a",
+                    "b",
+                    "c",
+                    "and",
+                    "points",
+                    "d",
+                    "f",
+                    "e",
+                    "inside",
+                    "it"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:1:0",
+                        "kind": "FOCUS",
+                        "at_word": 4,
+                        "entity_id": "g_setup",
+                        "focus_mode": "outline"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 2,
+                "spoken_text": "Notice segment DE is parallel to side AC in our figure.",
+                "words": [
+                    "notice",
+                    "segment",
+                    "de",
+                    "is",
+                    "parallel",
+                    "to",
+                    "side",
+                    "ac",
+                    "in",
+                    "our",
+                    "figure"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:0",
+                        "kind": "FOCUS",
+                        "at_word": 3,
+                        "entity_id": "DE",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:1",
+                        "kind": "FOCUS",
+                        "at_word": 8,
+                        "entity_id": "CA",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:2",
+                        "kind": "WRITE",
+                        "at_word": 11,
+                        "text": "DE ∥ AC",
+                        "row_id": "w2"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 3,
+                "spoken_text": "Follow segment DF which is parallel to segment AE .",
+                "words": [
+                    "follow",
+                    "segment",
+                    "df",
+                    "which",
+                    "is",
+                    "parallel",
+                    "to",
+                    "segment",
+                    "ae"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:0",
+                        "kind": "FOCUS",
+                        "at_word": 3,
+                        "entity_id": "DF",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:1",
+                        "kind": "FOCUS",
+                        "at_word": 9,
+                        "entity_id": "AE",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:2",
+                        "kind": "WRITE",
+                        "at_word": 9,
+                        "text": "DF ∥ AE",
+                        "row_id": "w3"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 4,
+                "spoken_text": "Now look at the smaller triangle with vertex A and vertex B and E on the base.",
+                "words": [
+                    "now",
+                    "look",
+                    "at",
+                    "the",
+                    "smaller",
+                    "triangle",
+                    "with",
+                    "vertex",
+                    "a",
+                    "and",
+                    "vertex",
+                    "b",
+                    "and",
+                    "e",
+                    "on",
+                    "the",
+                    "base"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:0",
+                        "kind": "FOCUS",
+                        "at_word": 9,
+                        "entity_id": "A",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:1",
+                        "kind": "FOCUS",
+                        "at_word": 12,
+                        "entity_id": "B",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:2",
+                        "kind": "WRITE",
+                        "at_word": 17,
+                        "text": "In △ABE, DF ∥ AE",
+                        "row_id": "w4"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 5,
+                "spoken_text": "By Basic Proportionality Theorem, a parallel line divides the two sides in the same ratio.",
+                "words": [
+                    "by",
+                    "basic",
+                    "proportionality",
+                    "theorem",
+                    "a",
+                    "parallel",
+                    "line",
+                    "divides",
+                    "the",
+                    "two",
+                    "sides",
+                    "in",
+                    "the",
+                    "same",
+                    "ratio"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:5:0",
+                        "kind": "WRITE",
+                        "at_word": 15,
+                        "text": "BF/FE = BD/DA",
+                        "row_id": "w5"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 6,
+                "spoken_text": "This is side AB where point D lies, part of the big triangle.",
+                "words": [
+                    "this",
+                    "is",
+                    "side",
+                    "ab",
+                    "where",
+                    "point",
+                    "d",
+                    "lies",
+                    "part",
+                    "of",
+                    "the",
+                    "big",
+                    "triangle"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:0",
+                        "kind": "FOCUS",
+                        "at_word": 4,
+                        "entity_id": "AB",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:1",
+                        "kind": "FOCUS",
+                        "at_word": 7,
+                        "entity_id": "D",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:2",
+                        "kind": "WRITE",
+                        "at_word": 13,
+                        "text": "In △ABC, DE ∥ AC",
+                        "row_id": "w6"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 7,
+                "spoken_text": "Follow the base BC up to point C to see the second division.",
+                "words": [
+                    "follow",
+                    "the",
+                    "base",
+                    "bc",
+                    "up",
+                    "to",
+                    "point",
+                    "c",
+                    "to",
+                    "see",
+                    "the",
+                    "second",
+                    "division"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:0",
+                        "kind": "FOCUS",
+                        "at_word": 4,
+                        "entity_id": "BC",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:1",
+                        "kind": "FOCUS",
+                        "at_word": 8,
+                        "entity_id": "C",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:2",
+                        "kind": "WRITE",
+                        "at_word": 13,
+                        "text": "BD/DA = BE/EC",
+                        "row_id": "w7"
+                    }
+                ]
+            },
+            {
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "generation": 1,
+                "step_index": 8,
+                "spoken_text": "Notice point F and point E give the same middle ratio B D by D A, so the two outer ratios match.",
+                "words": [
+                    "notice",
+                    "point",
+                    "f",
+                    "and",
+                    "point",
+                    "e",
+                    "give",
+                    "the",
+                    "same",
+                    "middle",
+                    "ratio",
+                    "b",
+                    "d",
+                    "by",
+                    "d",
+                    "a",
+                    "so",
+                    "the",
+                    "two",
+                    "outer",
+                    "ratios",
+                    "match"
+                ],
+                "ops": [
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:0",
+                        "kind": "FOCUS",
+                        "at_word": 3,
+                        "entity_id": "F",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:1",
+                        "kind": "FOCUS",
+                        "at_word": 6,
+                        "entity_id": "E",
+                        "focus_mode": "outline"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:2",
+                        "kind": "WRITE",
+                        "at_word": 22,
+                        "text": "BF/FE = BE/EC",
+                        "row_id": "w8"
+                    },
+                    {
+                        "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:3",
+                        "kind": "EMPHASIZE",
+                        "at_word": 22,
+                        "emphasize_row_id": "w8"
+                    }
+                ]
+            }
+        ],
+        "row_tracker": "<app.tutor.board_rows.BoardRowTracker object at 0x1659f5760>",
+        "agent_state": {
+            "session_id": "545e97ec-f8de-4311-b259-5b809889efec",
+            "user_id": "anonymous",
+            "board_id": "b_24ced51a",
+            "generation": 1,
+            "conv_state": "AGENT_SPEAKING",
+            "page": {
+                "board_id": "b_24ced51a",
+                "page_id": "p_2af4e404",
+                "lesson_question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                "turn_plan": {
+                    "schema_version": "turn-plan/v3",
+                    "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                    "givens": [],
+                    "unknowns": [],
+                    "derived": [],
+                    "qualitative_claims": [
+                        {
+                            "id": "c1",
+                            "claim": "DE is parallel to AC",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "D",
+                                "E",
+                                "A",
+                                "C"
+                            ]
+                        },
+                        {
+                            "id": "c2",
+                            "claim": "DF is parallel to AE",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "D",
+                                "F",
+                                "A",
+                                "E"
+                            ]
+                        },
+                        {
+                            "id": "c3",
+                            "claim": "In triangle ABE, DF parallel AE implies BF/FE equals BD/DA",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "F",
+                                "E",
+                                "D",
+                                "A"
+                            ]
+                        },
+                        {
+                            "id": "c4",
+                            "claim": "In triangle ABC, DE parallel AC implies BD/DA equals BE/EC",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "D",
+                                "A",
+                                "E",
+                                "C"
+                            ]
+                        },
+                        {
+                            "id": "c5",
+                            "claim": "BF/FE equals BE/EC by transitivity through BD/DA",
+                            "expected": true,
+                            "related_quantity_ids": [],
+                            "related_entity_hints": [
+                                "B",
+                                "F",
+                                "E",
+                                "C"
+                            ]
+                        }
+                    ],
+                    "law_ids": [
+                        "basic_proportionality_theorem",
+                        "transitive_property_of_equality"
+                    ],
+                    "assumptions": [
+                        "ABC is a triangle with base BC",
+                        "D lies on side AB",
+                        "F and E lie on BC in order B-F-E-C"
+                    ],
+                    "visual_requirement": "required"
+                },
+                "diagram": {
+                    "id": "verified_scene",
+                    "name": "point_figure",
+                    "commands": [
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                780,
+                                195.17,
+                                3.5
+                            ],
+                            "anchor_id": "A",
+                            "semantic_ref": {
+                                "entity_id": "A"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                490.34,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "B",
+                            "semantic_ref": {
+                                "entity_id": "B"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                1069.66,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "C",
+                            "semantic_ref": {
+                                "entity_id": "C"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                606.21,
+                                368.97,
+                                3.5
+                            ],
+                            "anchor_id": "D",
+                            "semantic_ref": {
+                                "entity_id": "D"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                583.03,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "F",
+                            "semantic_ref": {
+                                "entity_id": "F"
+                            }
+                        },
+                        {
+                            "type": "DRAW_POINT",
+                            "params": [
+                                722.07,
+                                484.83,
+                                3.5
+                            ],
+                            "anchor_id": "E",
+                            "semantic_ref": {
+                                "entity_id": "E"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                780,
+                                195.17,
+                                490.34,
+                                484.83
+                            ],
+                            "anchor_id": "AB",
+                            "semantic_ref": {
+                                "entity_id": "AB"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                490.34,
+                                484.83,
+                                1069.66,
+                                484.83
+                            ],
+                            "anchor_id": "BC",
+                            "semantic_ref": {
+                                "entity_id": "BC"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                1069.66,
+                                484.83,
+                                780,
+                                195.17
+                            ],
+                            "anchor_id": "CA",
+                            "semantic_ref": {
+                                "entity_id": "CA"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                780,
+                                195.17,
+                                722.07,
+                                484.83
+                            ],
+                            "anchor_id": "AE",
+                            "semantic_ref": {
+                                "entity_id": "AE"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                606.21,
+                                368.97,
+                                722.07,
+                                484.83
+                            ],
+                            "anchor_id": "DE",
+                            "semantic_ref": {
+                                "entity_id": "DE"
+                            }
+                        },
+                        {
+                            "type": "DRAW_LINE",
+                            "params": [
+                                606.21,
+                                368.97,
+                                583.03,
+                                484.83
+                            ],
+                            "anchor_id": "DF",
+                            "semantic_ref": {
+                                "entity_id": "DF"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                775,
+                                170.17,
+                                18
+                            ],
+                            "text": "A",
+                            "anchor_id": "A",
+                            "semantic_ref": {
+                                "entity_id": "A"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                485.34,
+                                459.83,
+                                18
+                            ],
+                            "text": "B",
+                            "anchor_id": "B",
+                            "semantic_ref": {
+                                "entity_id": "B"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                1064.66,
+                                459.83,
+                                18
+                            ],
+                            "text": "C",
+                            "anchor_id": "C",
+                            "semantic_ref": {
+                                "entity_id": "C"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                601.21,
+                                343.97,
+                                18
+                            ],
+                            "text": "D",
+                            "anchor_id": "D",
+                            "semantic_ref": {
+                                "entity_id": "D"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                578.03,
+                                459.83,
+                                18
+                            ],
+                            "text": "F",
+                            "anchor_id": "F",
+                            "semantic_ref": {
+                                "entity_id": "F"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                717.07,
+                                459.83,
+                                18
+                            ],
+                            "text": "E",
+                            "anchor_id": "E",
+                            "semantic_ref": {
+                                "entity_id": "E"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                670.14,
+                                432.9,
+                                16
+                            ],
+                            "text": "DE || AC",
+                            "anchor_id": "DE",
+                            "semantic_ref": {
+                                "entity_id": "DE"
+                            }
+                        },
+                        {
+                            "type": "LABEL",
+                            "params": [
+                                600.62,
+                                432.9,
+                                16
+                            ],
+                            "text": "DF || AE",
+                            "anchor_id": "DF",
+                            "semantic_ref": {
+                                "entity_id": "DF"
+                            }
+                        }
+                    ],
+                    "anchors": [
+                        {
+                            "id": "A",
+                            "labels": [
+                                "A"
+                            ],
+                            "x": 775,
+                            "y": 170.17,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "B",
+                            "labels": [
+                                "B"
+                            ],
+                            "x": 485.34,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "C",
+                            "labels": [
+                                "C"
+                            ],
+                            "x": 1064.66,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "D",
+                            "labels": [
+                                "D"
+                            ],
+                            "x": 601.21,
+                            "y": 343.97,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "F",
+                            "labels": [
+                                "F"
+                            ],
+                            "x": 578.03,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "E",
+                            "labels": [
+                                "E"
+                            ],
+                            "x": 717.07,
+                            "y": 459.83,
+                            "width": 10,
+                            "height": 29
+                        },
+                        {
+                            "id": "AB",
+                            "labels": [],
+                            "x": 490.34,
+                            "y": 195.17,
+                            "width": 289.66,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "BC",
+                            "labels": [],
+                            "x": 490.34,
+                            "y": 484.83,
+                            "width": 579.32,
+                            "height": 10
+                        },
+                        {
+                            "id": "CA",
+                            "labels": [],
+                            "x": 780,
+                            "y": 195.17,
+                            "width": 289.66,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "AE",
+                            "labels": [],
+                            "x": 722.07,
+                            "y": 195.17,
+                            "width": 57.93,
+                            "height": 289.66
+                        },
+                        {
+                            "id": "DE",
+                            "labels": [],
+                            "x": 606.21,
+                            "y": 368.97,
+                            "width": 115.86,
+                            "height": 115.86
+                        },
+                        {
+                            "id": "DF",
+                            "labels": [],
+                            "x": 583.03,
+                            "y": 368.97,
+                            "width": 23.18,
+                            "height": 115.86
+                        }
+                    ],
+                    "reveals": [
+                        {
+                            "narration": "Reveal group g_setup",
+                            "command_indices": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18,
+                                19
+                            ],
+                            "kind": "reveal",
+                            "target_id": "g_setup"
+                        },
+                        {
+                            "narration": "Reveal group g_parallel",
+                            "command_indices": [],
+                            "kind": "reveal",
+                            "target_id": "g_parallel"
+                        }
+                    ],
+                    "prompt_addon": "figure: point_figure\nparts you may [FOCUS] (use each id exactly):\n- A: point A\n- B: point B\n- C: point C\n- D: point D\n- F: point F\n- E: point E\n- AB: side AB\n- BC: side BC\n- CA: side CA\n- AE: side AE\n- DE: side DE\n- DF: side DF\nreveal groups you may [FOCUS]: g_setup, g_parallel",
+                    "caption": "Triangle ABC with D on AB and B-F-E-C on base, with DE parallel AC and DF parallel AE.",
+                    "label_glossary": {
+                        "A": {
+                            "symbol": "A",
+                            "title": "point A"
+                        },
+                        "B": {
+                            "symbol": "B",
+                            "title": "point B"
+                        },
+                        "C": {
+                            "symbol": "C",
+                            "title": "point C"
+                        },
+                        "D": {
+                            "symbol": "D",
+                            "title": "point D"
+                        },
+                        "F": {
+                            "symbol": "F",
+                            "title": "point F"
+                        },
+                        "E": {
+                            "symbol": "E",
+                            "title": "point E"
+                        }
+                    },
+                    "namespace": ""
+                },
+                "visual_status": "validated",
+                "figure_drawn": true,
+                "turn_kind": "lesson",
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "continues_board": false,
+                "saved": false,
+                "lesson_completed": false
+            },
+            "active_turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+            "active_turn_kind": "lesson",
+            "steps_sent": [
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 0,
+                    "spoken_text": "Look at this triangle figure, we want to prove a lovely ratio result about the segments on the base.",
+                    "words": [
+                        "look",
+                        "at",
+                        "this",
+                        "triangle",
+                        "figure",
+                        "we",
+                        "want",
+                        "to",
+                        "prove",
+                        "a",
+                        "lovely",
+                        "ratio",
+                        "result",
+                        "about",
+                        "the",
+                        "segments",
+                        "on",
+                        "the",
+                        "base"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:0:0",
+                            "kind": "WRITE",
+                            "at_word": 19,
+                            "text": "To prove: BF/FE = BE/EC",
+                            "row_id": "w1"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 1,
+                    "spoken_text": "Look at this figure with triangle A B C and points D, F, E inside it.",
+                    "words": [
+                        "look",
+                        "at",
+                        "this",
+                        "figure",
+                        "with",
+                        "triangle",
+                        "a",
+                        "b",
+                        "c",
+                        "and",
+                        "points",
+                        "d",
+                        "f",
+                        "e",
+                        "inside",
+                        "it"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:1:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "g_setup",
+                            "focus_mode": "outline"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 2,
+                    "spoken_text": "Notice segment DE is parallel to side AC in our figure.",
+                    "words": [
+                        "notice",
+                        "segment",
+                        "de",
+                        "is",
+                        "parallel",
+                        "to",
+                        "side",
+                        "ac",
+                        "in",
+                        "our",
+                        "figure"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "DE",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:1",
+                            "kind": "FOCUS",
+                            "at_word": 8,
+                            "entity_id": "CA",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:2:2",
+                            "kind": "WRITE",
+                            "at_word": 11,
+                            "text": "DE ∥ AC",
+                            "row_id": "w2"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 3,
+                    "spoken_text": "Follow segment DF which is parallel to segment AE .",
+                    "words": [
+                        "follow",
+                        "segment",
+                        "df",
+                        "which",
+                        "is",
+                        "parallel",
+                        "to",
+                        "segment",
+                        "ae"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "DF",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:1",
+                            "kind": "FOCUS",
+                            "at_word": 9,
+                            "entity_id": "AE",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:3:2",
+                            "kind": "WRITE",
+                            "at_word": 9,
+                            "text": "DF ∥ AE",
+                            "row_id": "w3"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 4,
+                    "spoken_text": "Now look at the smaller triangle with vertex A and vertex B and E on the base.",
+                    "words": [
+                        "now",
+                        "look",
+                        "at",
+                        "the",
+                        "smaller",
+                        "triangle",
+                        "with",
+                        "vertex",
+                        "a",
+                        "and",
+                        "vertex",
+                        "b",
+                        "and",
+                        "e",
+                        "on",
+                        "the",
+                        "base"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:0",
+                            "kind": "FOCUS",
+                            "at_word": 9,
+                            "entity_id": "A",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:1",
+                            "kind": "FOCUS",
+                            "at_word": 12,
+                            "entity_id": "B",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:4:2",
+                            "kind": "WRITE",
+                            "at_word": 17,
+                            "text": "In △ABE, DF ∥ AE",
+                            "row_id": "w4"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 5,
+                    "spoken_text": "By Basic Proportionality Theorem, a parallel line divides the two sides in the same ratio.",
+                    "words": [
+                        "by",
+                        "basic",
+                        "proportionality",
+                        "theorem",
+                        "a",
+                        "parallel",
+                        "line",
+                        "divides",
+                        "the",
+                        "two",
+                        "sides",
+                        "in",
+                        "the",
+                        "same",
+                        "ratio"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:5:0",
+                            "kind": "WRITE",
+                            "at_word": 15,
+                            "text": "BF/FE = BD/DA",
+                            "row_id": "w5"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 6,
+                    "spoken_text": "This is side AB where point D lies, part of the big triangle.",
+                    "words": [
+                        "this",
+                        "is",
+                        "side",
+                        "ab",
+                        "where",
+                        "point",
+                        "d",
+                        "lies",
+                        "part",
+                        "of",
+                        "the",
+                        "big",
+                        "triangle"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "AB",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:1",
+                            "kind": "FOCUS",
+                            "at_word": 7,
+                            "entity_id": "D",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:6:2",
+                            "kind": "WRITE",
+                            "at_word": 13,
+                            "text": "In △ABC, DE ∥ AC",
+                            "row_id": "w6"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 7,
+                    "spoken_text": "Follow the base BC up to point C to see the second division.",
+                    "words": [
+                        "follow",
+                        "the",
+                        "base",
+                        "bc",
+                        "up",
+                        "to",
+                        "point",
+                        "c",
+                        "to",
+                        "see",
+                        "the",
+                        "second",
+                        "division"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:0",
+                            "kind": "FOCUS",
+                            "at_word": 4,
+                            "entity_id": "BC",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:1",
+                            "kind": "FOCUS",
+                            "at_word": 8,
+                            "entity_id": "C",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:7:2",
+                            "kind": "WRITE",
+                            "at_word": 13,
+                            "text": "BD/DA = BE/EC",
+                            "row_id": "w7"
+                        }
+                    ]
+                },
+                {
+                    "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                    "generation": 1,
+                    "step_index": 8,
+                    "spoken_text": "Notice point F and point E give the same middle ratio B D by D A, so the two outer ratios match.",
+                    "words": [
+                        "notice",
+                        "point",
+                        "f",
+                        "and",
+                        "point",
+                        "e",
+                        "give",
+                        "the",
+                        "same",
+                        "middle",
+                        "ratio",
+                        "b",
+                        "d",
+                        "by",
+                        "d",
+                        "a",
+                        "so",
+                        "the",
+                        "two",
+                        "outer",
+                        "ratios",
+                        "match"
+                    ],
+                    "ops": [
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:0",
+                            "kind": "FOCUS",
+                            "at_word": 3,
+                            "entity_id": "F",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:1",
+                            "kind": "FOCUS",
+                            "at_word": 6,
+                            "entity_id": "E",
+                            "focus_mode": "outline"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:2",
+                            "kind": "WRITE",
+                            "at_word": 22,
+                            "text": "BF/FE = BE/EC",
+                            "row_id": "w8"
+                        },
+                        {
+                            "op_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2:8:3",
+                            "kind": "EMPHASIZE",
+                            "at_word": 22,
+                            "emphasize_row_id": "w8"
+                        }
+                    ]
+                }
+            ],
+            "last_acked_step_index": -1,
+            "acked_op_ids": [],
+            "current_step_index": 8,
+            "pending_request": {
+                "kind": "lesson",
+                "generation": 1,
+                "turn_id": "2af4e404-4437-4acb-8ef9-bc3f2375a5b2",
+                "question": "In the figure, DE||AC and DF||AE. Prove that BF/FE = BE/EC\n\nFigure: Triangle ABC with vertex A at the top and base BC horizontal. Point D is on side AB. Points F and E are on the base BC, in the order B, F, E, C from left to right. Line segments are drawn connecting A to E, D to E, and D to F.",
+                "marks": [],
+                "requires_new_figure": false
+            },
+            "interrupt_transcript": "",
+            "doubt_awaiting_resolution": false,
+            "marker_armed": false,
+            "tts_speed": 1,
+            "redirect_cursor": 0,
+            "history": [],
+            "lesson_topic": "basic proportionality theorem"
+        },
+        "history": [],
+        "stored_turns": [],
+        "solver_projection": {},
+        "gw": "<app.gateway.groq_client.GroqGateway object at 0x16604e180>"
+    },
+    "metadata": {
+        "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+        "LANGSMITH_PROJECT": "voice-agent-demo",
+        "LANGSMITH_TRACING": "true",
+        "LANGSMITH_USE_DAEMON": "true",
+        "ls_integration": "langgraph",
+        "ls_run_depth": 0,
+        "revision_id": "4482a0d-dirty"
+    },
+    "langsmith": {
+        "organization": {
+            "name": "Personal",
+            "id": "70988681-a9a6-4746-a24f-bdac948c600a"
+        },
+        "workspace": {
+            "name": "Workspace 1",
+            "id": "91d28bd1-a699-4796-b274-77ba65d4ff25"
+        },
+        "tracing_project": {
+            "id": "9f4dcbe4-3b4c-4a1e-ae90-4fa1c12e35c5",
+            "name": "voice-agent-demo"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+node_modules/
+frontend/dist/
+.venv/
+*.db
+*.db-shm
+*.db-wal
+.pytest_cache/
+.DS_Store
+.env
+traces/
+langsmith*.json
+!langsmith_11.json

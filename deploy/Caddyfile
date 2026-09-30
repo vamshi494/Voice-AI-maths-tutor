@@ -1,0 +1,21 @@
+# SITE_ADDRESS: ":80" (default, http://localhost) or a DNS name ("tutor.example.com") for
+# automatic HTTPS. Browsers only allow the microphone on https:// or http://localhost.
+{$SITE_ADDRESS::80} {
+	encode gzip
+
+	# FastAPI (token, OCR, boards)
+	handle_path /api/* {
+		reverse_proxy api:8000
+	}
+
+	# LiveKit signalling (WebSocket /rtc); media still flows over UDP/TCP ports of the host.
+	handle_path /livekit/* {
+		reverse_proxy livekit:7880
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}

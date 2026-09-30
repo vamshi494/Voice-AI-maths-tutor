@@ -1,0 +1,15 @@
+.git
+.venv
+**/node_modules
+frontend/dist
+**/__pycache__
+**/*.pyc
+.pytest_cache
+*.db
+*.db-shm
+*.db-wal
+dump
+docs
+traces
+langsmith*.json
+.env

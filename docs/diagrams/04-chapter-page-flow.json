@@ -1,0 +1,79 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Chapter Page Flow & Lifecycle",
+    "quality_profile": "showcase",
+    "viewBox": [1180, 720]
+  },
+  "lanes": [
+    { "id": "chapter", "label": "Chapter Orchestrator" },
+    { "id": "prefetch", "label": "Prefetch & Cache" },
+    { "id": "runner", "label": "LessonRunner & Delivery" },
+    { "id": "doubt", "label": "Doubt Interruption", "variant": "exception" }
+  ],
+  "phases": [
+    { "id": "init", "label": "Outline & Delivery", "fromCol": 0, "toCol": 1 },
+    { "id": "gap", "label": "Gap & Background Prefetch", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "advance", "label": "Advance & Sticky Carry", "fromCol": 4, "toCol": 4, "variant": "dashed" }
+  ],
+  "groups": [
+    { "id": "prefetch_grp", "label": "Background Prefetch", "lane": "prefetch", "fromCol": 1, "toCol": 2, "variant": "dashed" },
+    { "id": "doubt_grp", "label": "Doubt Park & Resume", "lane": "doubt", "fromCol": 2, "toCol": 4, "variant": "security" }
+  ],
+  "mainPath": ["outline", "page_run", "page_gap", "lock_gate", "page_advance"],
+  "nodes": [
+    { "id": "outline", "lane": "chapter", "col": 0, "type": "backend", "label": "Chapter Outline", "sublabel": "LessonPlan + stickies", "width": 140 },
+    { "id": "page_run", "lane": "runner", "col": 1, "type": "backend", "label": "Page 1 Taught", "sublabel": "Stream steps + speech", "tag": "active run", "width": 140 },
+    { "id": "prefetch", "lane": "prefetch", "col": 1, "type": "backend", "label": "Prefetch Page N+1", "sublabel": "Parked PageRun stream", "tag": "async producer", "width": 140 },
+    { "id": "sticky_carry", "lane": "prefetch", "col": 2, "type": "database", "label": "Sticky Harvest", "sublabel": "Cache compiled scenes", "width": 140 },
+    { "id": "page_gap", "lane": "runner", "col": 2, "type": "backend", "label": "Page Gap Timer", "sublabel": "PAGE_GAP_MS outside lock", "width": 140 },
+    { "id": "lock_gate", "lane": "runner", "col": 3, "type": "security", "label": "Lock & Gen Check", "sublabel": "async with mgr._lock", "width": 140 },
+    { "id": "doubt_interrupt", "lane": "doubt", "col": 2, "type": "external", "label": "Doubt Interrupt", "sublabel": "Voice or pen mark", "width": 140 },
+    { "id": "park_advance", "lane": "doubt", "col": 3, "type": "security", "label": "Park Advance", "sublabel": "cancel_gap(), pending=True", "width": 140 },
+    { "id": "doubt_resolve", "lane": "doubt", "col": 4, "type": "backend", "label": "Resolve Doubt", "sublabel": "Teach & clear doubt", "width": 140 },
+    { "id": "page_advance", "lane": "runner", "col": 4, "type": "frontend", "label": "Advance Page N+1", "sublabel": "Activate run + stickies", "tag": "turn board", "width": 140 }
+  ],
+  "edges": [
+    { "id": "e_start", "from": "outline", "to": "page_run", "label": "start chapter", "variant": "emphasis" },
+    { "id": "e_speech_end", "from": "page_run", "to": "page_gap", "label": "rule 29", "variant": "default" },
+    { "id": "e_prefetch", "from": "page_run", "to": "prefetch", "label": "maybe_prefetch", "variant": "dashed" },
+    { "id": "e_harvest", "from": "prefetch", "to": "sticky_carry", "label": "harvest stickies", "variant": "dashed" },
+    { "id": "e_carry_stickies", "from": "sticky_carry", "to": "page_advance", "label": "carried_stickies", "variant": "emphasis" },
+    { "id": "e_timer_done", "from": "page_gap", "to": "lock_gate", "label": "gap elapsed", "variant": "default" },
+    { "id": "e_advance_valid", "from": "lock_gate", "to": "page_advance", "label": "gen valid", "variant": "emphasis" },
+    { "id": "e_doubt_interrupt", "from": "page_gap", "to": "doubt_interrupt", "label": "speech in gap", "variant": "security", "role": "error" },
+    { "id": "e_park", "from": "doubt_interrupt", "to": "park_advance", "label": "cancel_gap", "variant": "security" },
+    { "id": "e_teach_doubt", "from": "park_advance", "to": "doubt_resolve", "label": "teach doubt", "variant": "default" },
+    { "id": "e_settled_resume", "from": "doubt_resolve", "to": "page_advance", "label": "resume advance", "variant": "emphasis" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Chapter Architecture",
+      "items": [
+        "Outline node synthesizes LessonPlan with stable sticky-block IDs",
+        "Page 1 starts immediately while outline background task completes",
+        "Sticky scenes are cached across chapter pages to prevent re-generation"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Prefetch & Gap",
+      "items": [
+        "maybe_prefetch starts page N+1 into a parked PageRun stream during page N speech",
+        "Page gap sleep runs outside StateMachineManager lock so interrupts are unblocked",
+        "Filler aside keeps student engaged if prefetched producer is still running"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Interruption & Recovery",
+      "items": [
+        "Doubt during gap cancels timer task but preserves advance_pending flag",
+        "Doubt resolution seamlessly re-spawns advance for the intended target page",
+        "Carried stickies inject previous compiled scenes with revealed ledger history"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": {
+    "title": "Conversation State Lifecycle Machine",
+    "quality_profile": "showcase",
+    "viewBox": [1240, 720]
+  },
+  "lanes": [
+    { "id": "main", "label": "Teaching Flow" },
+    { "id": "waiting", "label": "Interruption & Triage" },
+    { "id": "recovery", "label": "Doubt & Pause" },
+    { "id": "terminal", "label": "Terminal Exits" }
+  ],
+  "states": [
+    { "id": "idle", "type": "start", "label": "IDLE", "sublabel": "Awaiting input", "lane": "main", "col": 0, "step": "01", "tag": "ready" },
+    { "id": "graph_running", "type": "active", "label": "GRAPH_RUNNING", "sublabel": "LangGraph racing", "lane": "main", "col": 1, "step": "02", "tag": "planning" },
+    { "id": "agent_speaking", "type": "active", "label": "AGENT_SPEAKING", "sublabel": "Tutor speech", "lane": "main", "col": 2, "step": "03", "tag": "active" },
+    { "id": "task_correcting", "type": "active", "label": "TASK_CORRECTING", "sublabel": "Addressing doubt", "lane": "main", "col": 3, "step": "04", "tag": "remedy" },
+    { "id": "resuming", "type": "active", "label": "RESUMING", "sublabel": "Catching up board", "lane": "main", "col": 4, "step": "05", "tag": "catchup" },
+    { "id": "interrupt_detected", "type": "waiting", "label": "INTERRUPT_DETECTED", "sublabel": "VAD start heard", "lane": "waiting", "col": 0, "tag": "vad" },
+    { "id": "interrupt_classifying", "type": "decision", "label": "INTERRUPT_CLASSIFYING", "sublabel": "Evaluating intent", "lane": "waiting", "col": 1, "tag": "triage" },
+    { "id": "task_redirected", "type": "neutral", "label": "TASK_REDIRECTED", "sublabel": "Off-topic prompt", "lane": "waiting", "col": 2, "tag": "redirect" },
+    { "id": "task_paused", "type": "waiting", "label": "TASK_PAUSED", "sublabel": "Settling quiet timer", "lane": "recovery", "col": 1, "yOffset": 80, "tag": "pause" },
+    { "id": "task_cancelled", "type": "failure", "label": "TASK_CANCELLED", "sublabel": "Session ended", "lane": "terminal", "col": 1, "tag": "terminal" }
+  ],
+  "transitions": [
+    { "id": "t_vad", "from": "agent_speaking", "to": "interrupt_detected", "variant": "default", "route": "straight", "fromSide": "bottom", "toSide": "top" },
+    { "id": "t_user_done", "from": "interrupt_detected", "to": "interrupt_classifying", "variant": "emphasis", "fromSide": "right", "toSide": "left" },
+    { "id": "t_off_topic", "from": "interrupt_classifying", "to": "task_redirected", "variant": "default", "fromSide": "right", "toSide": "left" },
+    { "id": "t_redirect_done", "from": "task_redirected", "to": "resuming", "variant": "default", "route": "straight", "fromSide": "top", "toSide": "bottom" },
+    { "id": "t_backchannel", "from": "interrupt_classifying", "to": "agent_speaking", "variant": "default", "fromSide": "left", "toSide": "bottom" },
+    { "id": "t_cls_doubt", "from": "interrupt_classifying", "to": "task_paused", "variant": "default", "route": "straight", "fromSide": "bottom", "toSide": "top" },
+    { "id": "t_doubt_settled", "from": "task_paused", "to": "task_correcting", "variant": "emphasis", "fromSide": "right", "toSide": "bottom" },
+    { "id": "t_end_session", "from": "task_paused", "to": "task_cancelled", "variant": "security", "route": "straight", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Voice Lifecycle & Turns",
+      "items": [
+        "StateMachineManager handles events under asyncio.Lock",
+        "VAD barge-in requires minimum 3 words; backchannels safely return to speaking",
+        "Page speech completion turns to GRAPH_RUNNING when has_next_page is true"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Doubt Resolution & Pause",
+      "items": [
+        "Doubt marks and speech pause the active lesson without losing generated steps",
+        "Audio + pen settle quiet timer aggregates follow-up input for 2500 ms",
+        "Settled doubt routes into TASK_CORRECTING and resumes original lesson afterward"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Terminal State",
+      "items": [
+        "TASK_CANCELLED ignores all further events (Rule 23)",
+        "End RPC or CLS_END tears down active producer tasks and releases board lease"
+      ]
+    }
+  ]
+}
